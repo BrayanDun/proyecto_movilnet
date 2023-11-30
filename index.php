@@ -94,7 +94,7 @@
     <section class="home">
         <div class="text">Inicio</div>
         <?php 
-        echo isset($contents) ?$contents:"variable contents no encontrada"; 
+        echo isset($contents) ?$contents:""; 
         ?>
     </section>
 
