@@ -29,7 +29,7 @@
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="index.html">
+                        <a href="./index.php">
                         <i class='bx bx-home icon' ></i>
                         <span class="text nav-text">Inicio</span>
                         </a>
