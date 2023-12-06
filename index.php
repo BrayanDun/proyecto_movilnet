@@ -17,7 +17,6 @@
                 </span>
                 <div class="text header-text">
                     <span class="name">Movilnet</span>
-                    <span class="profession">Usuario</span>
                 </div>
             </div>
 
