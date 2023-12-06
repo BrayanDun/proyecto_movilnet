@@ -26,11 +26,7 @@ body {
 .frame {
   height: 1300px;
   width: 450px;
-  background:
-    linear-gradient(
-      rgba(35, 43, 85, 0.75),
-      rgba(35, 43, 85, 0.95)),
-    url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+  background: linear-gradient( #ff7360, rgb(219 221 237 / 95%)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
   background-size: cover;
   margin-left: auto;
   margin-right: auto;

@@ -7,9 +7,9 @@
     box-sizing: border-box;
 }
 :root{
-    --body-color: #E4E9F7;
+    --body-color: ##fbfcff;
     --sidebar-color: #ff7360;
-    --primary-color: #DAFFFB;
+    --primary-color: #fdffff;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;

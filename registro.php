@@ -19,7 +19,7 @@
         </ul>
       </div>
       <div ng-app ng-init="checked = false">
-        <form class="form-signup" action="registro.php" method="post" name="form">
+        <form class="form-signup" action="conexiones\registro_servidores.php" method="post" name="form">
 
           <label for="id">ID del servidor</label>
           <input class="form-styling" type="number" name="id" placeholder="">

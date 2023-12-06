@@ -91,12 +91,11 @@
     </nav>
 
     <section class="home">
-        <div class="text">Inicio</div>
         <?php 
         echo isset($contents) ?$contents:""; 
         ?>
     </section>
-
+    <button class="text" a href="./index.php">Regresar  >
     <script src="script_inicio.js"></script>
 
 </body>
