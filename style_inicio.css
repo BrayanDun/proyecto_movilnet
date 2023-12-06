@@ -7,13 +7,12 @@
     box-sizing: border-box;
 }
 :root{
-    --body-color: ##fbfcff;
-    --sidebar-color: #ff7360;
-    --primary-color: #fdffff;
+    --body-color: ##655d5d;
+    --sidebar-color: #FF585F;
+    --primary-color: #ffffff;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
-    --text-color: #707070;
-
+    --text-color: #ffffff;
     --tran-02: all 0.2 ease;
     --tran-03: all 0.3 ease;
     --tran-04: all 0.4 ease;
