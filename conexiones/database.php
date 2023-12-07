@@ -4,7 +4,7 @@
 $db_host = "localhost";
 $db_name = "Movilnet";
 $db_user = "postgres";
-$db_password = "123456";
+$db_password = "postgres";
 
 // Crear una conexión a la base de datos
 $connection = new PDO("pgsql:host=$db_host;dbname=$db_name;user=$db_user;password=$db_password");
