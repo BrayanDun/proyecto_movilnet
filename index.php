@@ -49,7 +49,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="modificar.html">
+                        <a href="modificar.php">
                         <i class='bx bx-edit icon'></i>
                         <span class="text nav-text">Modificar</span>
                         </a>

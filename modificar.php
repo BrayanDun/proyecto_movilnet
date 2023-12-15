@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,3 +31,11 @@
   </div>
 </body>
 </html>
+
+<?php $contents = ob_get_clean(); ?>
+
+<?php 
+
+require("./index.php");
+
+?>
