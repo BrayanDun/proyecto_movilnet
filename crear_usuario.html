@@ -35,7 +35,7 @@
 
                 <!-- Formulario del Login -->
 
-                <form action="#">
+                <form action="conexiones\registro_usuarios.php" method="post">
                     <div class="mb-4 shadow">
                         <label for="number" class="form-label">P00</label>
                         <input type="number" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="P00">
@@ -62,17 +62,17 @@
                     </div>
 
                     <div class="mb-4 shadow">
-                        <label for="Coordinacion" class="form-label">Cordinacion</label>
+                        <label for="Coordinacion" class="form-label">Coordinacion</label>
                         <input type="text" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Coordinacion">
                     </div>
 
                     <div class="mb-4 shadow">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" style="background-color: #f0f2dc; color: black;" name="password id="password">
+                        <input type="password" class="form-control" style="background-color: #f0f2dc; color: black;" name="Contraseña" id="Contraseña">
                     </div>
 
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                        <input type="submit" value="Registrar" class="btn-signup" id="submitBtn">
                         <span>Quieres volver? <a href="iniciar_sesion.html">Regresar</a></span> <br>
                     </div>
 

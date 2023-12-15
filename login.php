@@ -11,7 +11,7 @@ $p00 = $_POST["p00"];
 $contraseña = $_POST["contraseña"];
 
 // Consulta SQL para buscar el usuario
-$sql = "SELECT * FROM usuario WHERE p00 = '$p00' AND contraseña = '$contraseña'";
+$sql = "SELECT * FROM usuarios WHERE p00 = '$p00' AND contraseña = '$contraseña'";
 
 // Ejecuta la consulta
 $resultados = $conn->query($sql);
