@@ -10,8 +10,8 @@
   <div class="container">
     <h1>Modificar servidor</h1>
     <form action="conexiones\con_modificar.php" method="post">
-      <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
-      <input type="text" name="nombre_completo" placeholder="Nombre completo del servidor">
+      <input type="text" name="id" placeholder="ID del servidor">
+      <input type="text" name="nombre" placeholder="Nombre completo del servidor">
       <input type="text" name="ip" placeholder="IP del servidor">
       <input type="text" name="tipos" placeholder="Tipos de servidor">
       <input type="text" name="ubicacion" placeholder="Ubicación del servidor">
@@ -26,6 +26,7 @@
       <input type="text" name="estatus" placeholder="Estatus del servidor">
       <input type="submit" value="Modificar servidor">
     </form>
+  
   </div>
 </body>
 </html>
