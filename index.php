@@ -1,10 +1,23 @@
+<?php
+
+// Inicializa la variable de sesión
+session_start();
+$logged_in = false;
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION["logged_in"]) || !$_SESSION["logged_in"]) {
+  // Redirige al usuario a la página de inicio de sesión
+  header("Location: iniciar_sesion.html");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="style_inicio.css">
+    <link rel="stylesheet" href="CSS\style_inicio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -13,7 +26,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="logo movilnet.png" alt="logo">
+                    <img src="img\logo-movilnet2.PNG" alt="logo">
                 </span>
                 <div class="text header-text">
                     <span class="name">Movilnet</span>
@@ -35,7 +48,7 @@
                     </li>
                     
                     <li class="nav-link">
-                        <a href="conexiones/consulta_servidores.php">
+                        <a href="consulta_servidores.php">
                         <i class='bx bx-search icon'></i>
                         <span class="text nav-text">Consultar</span>
                         </a>
