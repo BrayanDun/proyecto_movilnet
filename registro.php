@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row1">
           <div class="col-6">
             <label for="ip" class="text-left">IP del servidor</label>
             <input class="form-styling" type="text" name="ip" placeholder="">
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row2">
           <div class="col-6">
             <label for="ubicacion" class="text-left">Ubicación</label>
             <input class="form-styling" type="text" name="ubicacion" placeholder="">
@@ -71,12 +71,12 @@
             <input class="form-styling" type="text" name="tipo_plataforma" placeholder="">
           </div>
           <div class="col-6">
-            <label for="observaciones" class="text-left">Observaciones</label>
-            <input class="form-styling" type="text" name="observaciones" placeholder="">
+          <label for="tipo_red" class="text-left">Tipo de Red</label>
+            <input class="form-styling" type="text" name="tipo_red" placeholder="">
           </div>
         </div>
 
-        <div class="row">
+        <div class="row3">
           <div class="col-6">
             <label for="dependencias" class="text-left">Dependencias</label>
             <input class="form-styling" type="text" name="dependencias" placeholder="">
@@ -90,16 +90,22 @@
 
         <div class="row">
           <div class="col-6">
-            <label for="tipo_red" class="text-left">Tipo de Red</label>
-            <input class="form-styling" type="text" name="tipo_red" placeholder="">
+          <label for="observaciones" class="text-left">Observaciones</label>
+            <p><input class="form-styling_observacion" type="text" name="observaciones" placeholder=""></p>
           </div>
-          <div class="col-6">
-            <label for="estatus" class="text-left">Estatus</label>
+          <div class="col-14">
+            <label for="estatus" class="text-left1">Estatus</label>
             <input class="form-styling" type="text" name="estatus" placeholder="">
           </div>
         </div>
-
+        <div class="reg_confirm">
         <input type="submit" value="Registrar servidor" class="btn-signup" id="submitBtn">
+        </div>
+
+        <div class="reg_cancel">
+        <input type="submit" value="Cancelar" class="btn-signup" id="submitBtn">
+        </div>
+        
       </div>
     
     </div>
