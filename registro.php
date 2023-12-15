@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar servidor</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_registro.css">
 </head>
 
 <body>
