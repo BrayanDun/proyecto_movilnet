@@ -49,7 +49,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="modificarprueba.html">
+                        <a href="modificar.html">
                         <i class='bx bx-edit icon'></i>
                         <span class="text nav-text">Modificar</span>
                         </a>
@@ -64,7 +64,7 @@
 
                     <li class="bottom-content">
                         <li>
-                            <a href="#">
+                            <a href="iniciar_sesion.html">
                             <i class='bx bx-log-out icon'></i>
                             <span class="text nav-text">Salir</span>
                             </a>
