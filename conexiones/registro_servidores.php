@@ -59,5 +59,6 @@ if ($stmt->rowCount() == 0) {
 // Cerrar la conexión a PostgreSQL
 $conn = null;
 
+header("location: ../registro.php");
 
 ?>
