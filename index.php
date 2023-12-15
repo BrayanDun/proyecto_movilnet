@@ -33,18 +33,18 @@
                         <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
+                    
+                    <li class="nav-link">
+                        <a href="conexiones/consulta_servidores.php">
+                        <i class='bx bx-search icon'></i>
+                        <span class="text nav-text">Consultar</span>
+                        </a>
+                    </li>
 
                     <li class="nav-link">
                         <a href="registro.php">
                         <i class='bx bx-message-square-add icon'></i>
                         <span class="text nav-text">Registrar</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="conexiones/consulta_servidores.php">
-                        <i class='bx bx-search icon'></i>
-                        <span class="text nav-text">Consultar</span>
                         </a>
                     </li>
 
@@ -74,17 +74,6 @@
                 </ul>
             </div>
 
-                <li class="mode">
-                    <div class="moon-sun">
-                        <i class="bx bx-moon icon moon"></i>
-                        <i class="bx bx-sun icon sun"></i>
-
-                    </div>
-                        <span class="mode-text text">Modo Oscuro</span>
-                        <div class="toggle-switch">
-                            <span class="switch"></span>
-                        </div>
-                </li>
 
             </div>
         </div>

@@ -9,8 +9,8 @@ body {
   width: 100vw;
   background:
     linear-gradient(
-      rgba(246, 247, 249, 0.8),
-      rgba(246, 247, 249, 0.8)),
+      rgb(185, 185, 185),
+      rgba(185, 185, 185, 0.8)),
     url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/sky-clouds-cloudy-mountain.jpg) no-repeat center center fixed;
   background-size: cover;
 }
@@ -25,8 +25,8 @@ body {
 /* Marco principal */
 .frame {
   height: 767px;
-  width: 37%;
-  background: linear-gradient( #ff7360, rgb(219 221 237 / 95%)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+  width: 100%;
+  background: linear-gradient( #ff7360, rgba(255, 130, 130, 0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
@@ -87,7 +87,7 @@ li {
 /* Botones de registro e inicio de sesión */
 .signin-active a {
   padding-bottom: 10px;
-  color: #ffffff;
+  color: #747373;
   text-decoration: none;
   border-bottom: solid 2px #1059FF;
   transition: all .25s ease;
@@ -121,10 +121,10 @@ li {
 /* Formularios de registro e inicio de sesión */
 .form-signin,
 .form-signup {
-  width: 430px;
+  width: 550px;
   height: 375px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   padding-left: 37px;
   padding-right: 37px;
   transition: opacity .5s ease, transform .5s ease;
@@ -159,7 +159,7 @@ li {
 
 /* Texto de éxito */
 .successtext {
-  color: #ffffff;
+  color: #3a3a3a;
   font-size: 16px;
   font-weight: 300;
   margin-top: -35px;
@@ -179,12 +179,12 @@ li {
 .form-styling {
   width: 92%;
   height: 39px;
-  margin-bottom: 15px;
-  padding-left: 15px;
+  margin-bottom: 20px;
+  padding-left: 20px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.486);
 }
 
 .form-styling::placeholder {

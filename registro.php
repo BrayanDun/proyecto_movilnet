@@ -87,16 +87,6 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-6">
-            <label for="dependencias" class="text-left">Dependencias</label>
-            <input class="form-styling" type="text" name="dependencias" placeholder="">
-          </div>
-          <div class="col-6">
-            <label for="conexiones" class="text-left">Conexiones</label>
-            <input class="form-styling" type="text" name="conexiones" placeholder="">
-          </div>
-        </div>
 
         <div class="row">
           <div class="col-6">
@@ -120,6 +110,7 @@
 </html>
 
 <?php $contents = ob_get_clean(); ?>
+
 <?php 
 
 require("./index.php");
