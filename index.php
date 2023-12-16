@@ -1,16 +1,4 @@
-<?php
 
-// Inicializa la variable de sesión
-session_start();
-$logged_in = false;
-
-// Verifica si el usuario ha iniciado sesión
-if (!isset($_SESSION["logged_in"]) || !$_SESSION["logged_in"]) {
-  // Redirige al usuario a la página de inicio de sesión
-  header("Location: iniciar_sesion.html");
-  exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
