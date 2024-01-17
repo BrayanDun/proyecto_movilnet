@@ -21,7 +21,8 @@ body{
 
 .container{
     position: relative;
-    margin-top: 50px;
+    margin-top: 130px;
+    margin-left: 350px;
 }
 
 label {
@@ -30,7 +31,7 @@ label {
     margin-left: 90px;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(235, 53, 53);
+    color: #FF585F;
 }
 
 input {
@@ -44,58 +45,72 @@ input {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-button {
-    background-color: crimson;
-    padding: 10px 15px;
-    position: absolute;
-    border: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+.boton_busq {
+    background-color: #FF585F;
+    padding: 17px 15px;
+    position: relative;
     margin: auto;
-    border-radius: 0 5px 5px 0;
+    border-radius: 15px;
     color: white;
     cursor: pointer;
+    border-color: whitesmoke;
 }
 
 button:hover {
     background-color: darkred;
 }
 
+.modif_desin{
+    margin-top: -20px;
+}
+
+.modificar {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
+
+.desincorp {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
 table {
     position: absolute;
     background-color: rgb(252, 248, 248);
-    margin-top: 450px;
+    margin-top: 100px;
     width: 200px;
     height: 200px;
-    border-collapse: collapse;
     justify-content: center;
 }
 
 table, th, td, tr {
+
     border: 2px solid;
-    border-color: crimson;
+    margin-block: 20px;
+    padding: 2px;
+    border-color:  #FF585F;
     justify-content: center;
     font-size: 0.8rem;
 }
 
-img {
-    position: absolute;
-    margin-top: 15px;
-    margin-left: 700px;
-    width: 100px;
-    height: 100px;
-    image-resolution: 100%;
-    background-image: -webkit-image-set(1);
-
-}
 
 
 </style>
     <div class="container">    
         <label> CONSULTAR SERVIDORES </label>
         <input type="text" placeholder="Buscar..."></input>
-        <button><i class='bx bx-search-alt-2'></i></button>
+        <button class="boton_busq"><i class='bx bx-search-alt-2'></i></button>
     </div>
     
     <table>
@@ -158,14 +173,17 @@ img {
             echo "<td>" . $row['conexiones'] . "</td>";
             echo "<td>" . $row['tipo_red'] . "</td>";
             echo "<td>" . $row['estatus'] . "</td>";
-            echo '<td><a href="">Modificar</a></td>';
-            echo '<td><a href="">Eliminar</a></td>';
             echo "</tr>";
           }
           ?>
     
         </tbody>
-      </table>
+        </table>
+        <div class="modif_desin">
+            <button class="modificar" href="">Modificar</button>
+            <button class="desincorp" href="">Desincorporar</button>
+        </div>
+
 </body>
 
 </html>

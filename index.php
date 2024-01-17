@@ -17,7 +17,7 @@
                     <img src="img\logo-movilnet2.PNG" alt="logo">
                 </span>
                 <div class="text header-text">
-                    <span class="name">Movilnet</span>
+                    <span class="name"> Movilnet</span>
                 </div>
             </div>
 
@@ -85,7 +85,6 @@
         echo isset($contents) ?$contents:""; 
         ?>
     </section>
-    <button class="text" a href="./index.php">Regresar  >
     <script src="script_inicio.js"></script>
 
 </body>
