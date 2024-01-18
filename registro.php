@@ -16,7 +16,7 @@
     <div class="frame">
       <div class="nav">
         <ul class="links">
-          <li class="signup-active"><a class="btn">Registro</a></li>
+          <li class="signup-active"><a class="boton">Registro</a></li>
         </ul>
       </div>
       <div class="form-signup">
