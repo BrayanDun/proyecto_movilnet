@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <h1>Modificar servidor</h1>
-    <form action="conexiones\con_modificar.php" method="post">
+    <form action="con_modificar.php" method="post">
       <input type="text" name="id" placeholder="ID del servidor">
       <input type="text" name="nombre" placeholder="Nombre completo del servidor">
       <input type="text" name="ip" placeholder="IP del servidor">
