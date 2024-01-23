@@ -13,12 +13,13 @@ $p00 = $_POST['P00'];
 $cedula = $_POST['Cedula'];
 $nombre = $_POST['Nombre'];
 $apellido = $_POST['Apellido'];
+$correo = $_POST['Correo'];
 $cargo = $_POST['Cargo'];
 $coordinacion = $_POST['Coordinacion'];
 $contrasena = $_POST['Contraseña']; // Cambié a "contrasena"
 
 // Crea una consulta SQL
-$sql = "INSERT INTO usuarios (p00, cedula, nombre, apellido, cargo, coordinacion, contraseña) VALUES (:p00, :cedula, :nombre, :apellido, :cargo, :coordinacion, :contrasena)";
+$sql = "INSERT INTO usuarios (p00, cedula, nombre,  apellido, correo, cargo,  coordinacion, contraseña) VALUES (:p00, :cedula, :nombre, :apellido, :correo, :cargo, :coordinacion, :contrasena)";
 
 // Prepara la consulta SQL
 $stmt = $conn->prepare($sql);
@@ -28,6 +29,7 @@ $stmt->bindValue(':p00', $p00);
 $stmt->bindValue(':cedula', $cedula);
 $stmt->bindValue(':nombre', $nombre);
 $stmt->bindValue(':apellido', $apellido);
+$stmt->bindValue(':correo', $correo);
 $stmt->bindValue(':cargo', $cargo);
 $stmt->bindValue(':coordinacion', $coordinacion);
 $stmt->bindValue(':contrasena', $contrasena); // Cambiado a "contrasena"

@@ -48,16 +48,30 @@
 
                     <div class="mb-4 shadow">
                         <label for="Nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Nombre">
+                        <input inputmode="text" pattern="^[a-zA-Z]+$" oninput="validateName(this)" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Nombre">
+                        <script>
+                            function validateName(input) {
+                              if (!/^[a-zA-Z]+$/.test(input.value)) {
+                                alert("El nombre solo debe contener letras.");
+                              }
+                            }
+                            </script>
                     </div>
 
                     <div class="mb-4 shadow">
                         <label for="Apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Apellido">
+                        <input inputmode="text" pattern="^[a-zA-Z]+$" oninput="validateName(this)"class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Apellido">
+                        <script>
+                            function validateName(input) {
+                              if (!/^[a-zA-Z]+$/.test(input.value)) {
+                                alert("El nombre solo debe contener letras.");
+                              }
+                            }
+                            </script>
                     </div>
 
                     <div class="mb-4 shadow">Correo Electronico</label>
-                        <input type="text" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Correo Electronico">
+                        <input type="email" id="email" class="form-control form-control-lg" style="background-color: #f0f2dc; color: black;" name="Correo Electronico">
                     </div>
 
                     <div class="mb-4 shadow">

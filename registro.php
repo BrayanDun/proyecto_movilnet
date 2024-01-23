@@ -94,8 +94,7 @@
             <p><input class="form-styling_observacion" type="text" name="observaciones" placeholder=""></p>
           </div>
           <div class="col-14">
-            <label for="estatus" class="text-left1">Estatus</label>
-            <input class="form-styling" type="text" name="estatus" placeholder="">
+            <label for="estatus" class="text-left1">Indique el estatus</label>
           </div>
         </div>
         <div class="reg_confirm">
