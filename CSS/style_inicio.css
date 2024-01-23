@@ -65,7 +65,7 @@ body.dark
 }
 .sidebar .image
 {
-    min-width: 60px;
+    min-width: 76px;
     display: flex;
     align-items: center;
     justify-content: center;
