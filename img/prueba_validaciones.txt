@@ -92,3 +92,8 @@
     display: none;
     font-size: 16px;
 }
+
+
+//imagen del inicio 
+
+    <img class= 'image_inicio' src="img\movilnetimg.png">

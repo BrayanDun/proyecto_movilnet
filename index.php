@@ -86,6 +86,5 @@
         ?>
     </section>
     <script src="script_inicio.js"></script>
-
 </body>
 </html>
