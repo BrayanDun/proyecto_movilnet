@@ -20,15 +20,15 @@ body {
 
 .container {
     position: relative;
-    margin-top: 130px;
-    margin-left: 350px;
+    margin-top: 60px;
+    margin-left: 220px;
 }
 
 label {
     position: absolute;
     margin: -25px;
     margin-left: 90px;
-    font-size: large;
+    font-size: xx-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
@@ -59,9 +59,6 @@ button:hover {
     background-color: darkred;
 }
 
-.modif_desin {
-    margin-top: -20px;
-}
 
 .modificar {
     background-color: #FF585F;
@@ -88,7 +85,7 @@ button:hover {
 table {
     position: absolute;
     background-color: rgb(252, 248, 248);
-    margin-top: 100px;
+    margin-top: 70px;
     width: 100%;  /* Ajuste el ancho de la tabla al 100% para que ocupe todo el contenedor */
     border-collapse: collapse;  /* Añadido para colapsar los bordes de las celdas */
 }
@@ -108,9 +105,7 @@ th {
 
 <body>
     <div class="container">
-        <label> CONSULTAR SERVIDORES </label>
-        <input type="text" placeholder="Buscar..."></input>
-        <button class="boton_busq"><i class='bx bx-search-alt-2'></i></button>
+        <label> DESINCORPORAR SERVIDOR </label>
     </div>
 
     <table>
@@ -155,7 +150,7 @@ th {
                 echo "<td>{$fila['conexiones']}</td>";
                 echo "<td>{$fila['tipo_red']}</td>";
                 echo "<td>{$fila['estatus']}</td>";
-                echo "<td><button class='desincorporar' onclick='desincorporarServidor({$fila['id']})'>Desincorporar</button>
+                echo "<td><button class='desincorp' onclick='desincorporarServidor({$fila['id']})'>Desincorporar</button>
                 </td>";
                 echo "</tr>";
             }

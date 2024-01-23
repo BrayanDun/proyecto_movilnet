@@ -25,9 +25,9 @@ body {
 
 label {
     position: absolute;
-    margin: -25px;
+    margin-top: -100px;
     margin-left: 90px;
-    font-size: large;
+    font-size: xx-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
@@ -73,6 +73,17 @@ button:hover {
     border-color: whitesmoke;
 }
 
+.guardar {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
+
 .desincorp {
     background-color: #FF585F;
     padding: 6px 6px;
@@ -87,7 +98,7 @@ button:hover {
 table {
     position: absolute;
     background-color: rgb(252, 248, 248);
-    margin-top: 100px;
+    margin-top: 10px;
     width: 100%;  /* Ajuste el ancho de la tabla al 100% para que ocupe todo el contenedor */
     border-collapse: collapse;  /* Añadido para colapsar los bordes de las celdas */
 }
@@ -107,9 +118,7 @@ th {
 
 <body>
     <div class="container">
-        <label> CONSULTAR SERVIDORES </label>
-        <input type="text" placeholder="Buscar..."></input>
-        <button class="boton_busq"><i class='bx bx-search-alt-2'></i></button>
+        <label> MODIFICAR </label>
     </div>
 
     <table>
@@ -179,7 +188,7 @@ th {
                          "<td><input type='text' value='" + fila.cells[11].innerText + "'></td>" +
                          "<td><input type='text' value='" + fila.cells[12].innerText + "'></td>" +
                          "<td><input type='text' value='" + fila.cells[13].innerText + "'></td>" +
-                         "<td><button onclick='guardarEdicion(" + id + ")'>Guardar</button></td>";
+                         "<td><button class='guardar' onclick='guardarEdicion(" + id + ")'>Guardar</button></td>";
     }
 
     function guardarEdicion(id) {

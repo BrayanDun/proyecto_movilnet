@@ -9,7 +9,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-
     <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -81,6 +80,7 @@
     </nav>
 
     <section class="home">
+    <img class= 'image_inicio' src="img\movilnetimg.png">
         <?php 
         echo isset($contents) ?$contents:""; 
         ?>

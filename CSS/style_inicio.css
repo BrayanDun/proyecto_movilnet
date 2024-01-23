@@ -70,6 +70,16 @@ body.dark
     align-items: center;
     justify-content: center;
 }
+
+.image_inicio{
+    width: 500px;
+    padding: center;
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 85px;
+}
+
+
 .sidebar li
 {
     height: 50px;

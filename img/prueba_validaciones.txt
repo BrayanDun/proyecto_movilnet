@@ -72,3 +72,23 @@
       	   <p class="success">
       <?php echo $success; ?>
    </p>
+
+   // css 
+   .error{
+    color: #af4242;
+    background-color: #fde8ec;
+    padding: 10px;
+    display: none;
+    transform: translateY(-20px);
+    margin-bottom: 20px;
+    font-size: 16px;
+   }
+
+.success {
+    margin-bottom: 30px;
+    color: green;
+    background-color: #d2ffd2;
+    padding: 10px;
+    display: none;
+    font-size: 16px;
+}

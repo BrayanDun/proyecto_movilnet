@@ -26,8 +26,8 @@ body {
 
 label {
     position: absolute;
-    margin: -25px;
-    margin-left: 90px;
+    margin: -49px;
+    margin-left: 65px;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
@@ -46,10 +46,12 @@ input {
 
 .boton_busq {
     background-color: #FF585F;
-    padding: 17px 15px;
-    position: relative;
-    margin: auto;
-    border-radius: 15px;
+    padding: 13.5px 18px;
+    position: absolute;
+    margin-top: -1.5px;
+    margin-left: -20px;
+
+    border-radius: 13.5px;
     color: white;
     cursor: pointer;
     border-color: whitesmoke;
@@ -59,36 +61,12 @@ button:hover {
     background-color: darkred;
 }
 
-.modif_desin {
-    margin-top: -20px;
-}
 
-.modificar {
-    background-color: #FF585F;
-    padding: 6px 6px;
-    position: relative;
-    margin-right: 10px;
-    border-radius: 9px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
-
-.desincorp {
-    background-color: #FF585F;
-    padding: 6px 6px;
-    position: relative;
-    margin-right: 10px;
-    border-radius: 9px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
 
 table {
     position: absolute;
     background-color: rgb(252, 248, 248);
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100%;  /* Ajuste el ancho de la tabla al 100% para que ocupe todo el contenedor */
     border-collapse: collapse;  /* Añadido para colapsar los bordes de las celdas */
 }
@@ -177,10 +155,6 @@ th {
     
         </tbody>
         </table>
-        <div class="modif_desin">
-            <button class="modificar" href="">Modificar</button>
-            <button class="desincorp" href="">Desincorporar</button>
-        </div>
 
 </body>
 
