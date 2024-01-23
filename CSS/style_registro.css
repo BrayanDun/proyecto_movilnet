@@ -228,6 +228,7 @@ li {
 /* Campos de entrada y etiquetas */
 .form-styling {
   width: 92%;
+  font-size: 14px;
   height: 39px;
   margin-bottom: 20px;
   padding-left: 20px;
@@ -270,6 +271,7 @@ li {
 
 /* Botón de registro */
 .btn-signup {
+  margin-right: -121px;
   width: 40%;
   height: 40px;
   border: none;
@@ -328,25 +330,20 @@ li {
   position: relative;
 }
 
-.select label {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
-}
+
 
 .select select {
   width: 200px;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.808);
+  color: #0c0c0c;
 }
 
 .select select:focus {
   outline: none;
-  border-color: #8cacc5;
-  box-shadow: 0 0 5px #8cacc5;
+  border-color: rgba(255, 255, 255, 0.808);
+  box-shadow: 0 0 5px #9da8b1;
 }

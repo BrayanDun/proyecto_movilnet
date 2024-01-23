@@ -80,7 +80,6 @@
     </nav>
 
     <section class="home">
-    <img class= 'image_inicio' src="img\movilnetimg.png">
         <?php 
         echo isset($contents) ?$contents:""; 
         ?>

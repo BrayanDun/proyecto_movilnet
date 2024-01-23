@@ -40,7 +40,7 @@
 
           <div class="select">
             <label for="tipos" class="text-left">Tipo</label>
-            <select name="tipos" id="tipos">
+            <select class='form-styling' name="tipos" id="tipos">
               <option value="Base de Datos">Base de Datos</option>
               <option value="Aplicativo">Aplicativo</option>
               <option value="Respaldo">Respaldo</option>
