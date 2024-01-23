@@ -57,7 +57,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="desincorporar.php">
                         <i class='bx bxs-folder-minus icon' ></i>
                         <span class="text nav-text">Desincorporar</span>
                         </a>

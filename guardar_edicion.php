@@ -21,20 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     
     // Actualizar la fila en la base de datos
     $consulta = "UPDATE servidores SET 
-                 nombre = :nombre, 
-                 ip = :ip, 
-                 tipos = :tipos, 
-                 ubicacion = :ubicacion, 
-                 so = :so, 
-                 servicios = :servicios, 
-                 caracteristicas = :caracteristicas, 
-                 tipo_plataforma = :tipo_plataforma, 
-                 observaciones = :observaciones, 
-                 dependencias = :dependencias, 
-                 conexiones = :conexiones, 
-                 tipo_red = :tipo_red, 
-                 estatus = :estatus 
-                 WHERE id = :id";
+        nombre = :nombre, 
+        ip = :ip, 
+        tipos = :tipos,
+        ubicacion = :ubicacion,
+        so = :so,
+        servicios = :servicios,
+        caracteristicas = :caracteristicas,
+        tipo_plataforma = :tipo_plataforma,
+        observaciones = :observaciones,
+        dependencias = :dependencias,
+        conexiones = :conexiones,
+        tipo_red = :tipo_red,
+        estatus = :estatus
+        WHERE id = :id";
 
     $statement = $db->prepare($consulta);
     $statement->bindParam(':id', $id);
@@ -59,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo "Actualización exitosa";
     } else {
         echo "Error al actualizar la base de datos";
+        print_r($statement->errorInfo()); // Imprimir información sobre errores
     }
 
     // Cerrar la conexión a la base de datos

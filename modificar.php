@@ -163,75 +163,73 @@ th {
     </table>
 
     <script>
-   
-        function editarFila(id) {
-            var fila = document.getElementById('fila_' + id);
-            fila.innerHTML = "<td><input type='text' value='" + fila.cells[0].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[1].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[2].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[3].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[4].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[5].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[6].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[7].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[8].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[9].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[10].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[11].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[12].innerText + "'></td>" +
-                             "<td><input type='text' value='" + fila.cells[13].innerText + "'></td>" +
-                             "<td><button onclick='guardarEdicion(" + id + ")'>Guardar</button></td>";
-        }
+    function editarFila(id) {
+        var fila = document.getElementById('fila_' + id);
+        fila.innerHTML = "<td><input type='text' value='" + fila.cells[0].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[1].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[2].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[3].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[4].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[5].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[6].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[7].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[8].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[9].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[10].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[11].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[12].innerText + "'></td>" +
+                         "<td><input type='text' value='" + fila.cells[13].innerText + "'></td>" +
+                         "<td><button onclick='guardarEdicion(" + id + ")'>Guardar</button></td>";
+    }
 
+    function guardarEdicion(id) {
+        // Obtener los nuevos valores desde los campos de entrada
+        var idNuevo = document.querySelector("#fila_" + id + " td:nth-child(1) input").value;
+        var nombreNuevo = document.querySelector("#fila_" + id + " td:nth-child(2) input").value;
+        var ipNuevo = document.querySelector("#fila_" + id + " td:nth-child(3) input").value;
+        var tiposNuevo = document.querySelector("#fila_" + id + " td:nth-child(4) input").value;
+        var ubicacionNuevo = document.querySelector("#fila_" + id + " td:nth-child(5) input").value;
+        var soNuevo = document.querySelector("#fila_" + id + " td:nth-child(6) input").value;
+        var serviciosNuevo = document.querySelector("#fila_" + id + " td:nth-child(7) input").value;
+        var caracteristicasNuevo = document.querySelector("#fila_" + id + " td:nth-child(8) input").value;
+        var tipoPlataformaNuevo = document.querySelector("#fila_" + id + " td:nth-child(9) input").value;
+        var observacionesNuevo = document.querySelector("#fila_" + id + " td:nth-child(10) input").value;
+        var dependenciasNuevo = document.querySelector("#fila_" + id + " td:nth-child(11) input").value;
+        var conexionesNuevo = document.querySelector("#fila_" + id + " td:nth-child(12) input").value;
+        var tipoRedNuevo = document.querySelector("#fila_" + id + " td:nth-child(13) input").value;
+        var estatusNuevo = document.querySelector("#fila_" + id + " td:nth-child(14) input").value;
 
-        function guardarEdicion(id) {
-    // Obtener los nuevos valores desde los campos de entrada
-    var idNuevo = document.querySelector("#fila_" + id + " td:nth-child(1) input").value;
-    var nombreNuevo = document.querySelector("#fila_" + nombre + " td:nth-child(2) input").value;
-    var ipNuevo = document.querySelector("#fila_" + ip + " td:nth-child(3) input").value;
-    var tiposNuevo = document.querySelector("#fila_" + tipos + " td:nth-child(4) input").value;
-    var ubicacionNuevo = document.querySelector("#fila_" + ubicacion + " td:nth-child(5) input").value;
-    var soNuevo = document.querySelector("#fila_" + so + " td:nth-child(6) input").value;
-    var serviciosNuevo = document.querySelector("#fila_" + servicios + " td:nth-child(7) input").value;
-    var caracteristicasNuevo = document.querySelector("#fila_" + caracteristicas + " td:nth-child(8) input").value;
-    var tipoPlataformaNuevo = document.querySelector("#fila_" + tipoPlataforma + " td:nth-child(9) input").value;
-    var observacionesNuevo = document.querySelector("#fila_" + observaciones + " td:nth-child(10) input").value;
-    var dependenciasNuevo = document.querySelector("#fila_" + dependencias + " td:nth-child(11) input").value;
-    var conexionesNuevo = document.querySelector("#fila_" + conexiones + " td:nth-child(12) input").value;
-    var tipoRedNuevo = document.querySelector("#fila_" + tipoRed + " td:nth-child(13) input").value;
-    var estatusNuevo = document.querySelector("#fila_" + estatus + " td:nth-child(14) input").value;
+        // Enviar los datos al servidor mediante AJAX
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Manejar la respuesta del servidor si es necesario
+                console.log(this.responseText);
+                location.reload();  // Recargar la página después de la actualización
+            }
+        };
 
-    // Enviar los datos al servidor mediante AJAX
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // Manejar la respuesta del servidor si es necesario
-            console.log(this.responseText);
-            location.reload();  // Recargar la página después de la actualización
-        }
-    };
+        // Construir la cadena de consulta con todos los campos
+        var queryString = "id=" + idNuevo +
+                          "&nombre=" + nombreNuevo +
+                          "&ip=" + ipNuevo +
+                          "&tipos=" + tiposNuevo +
+                          "&ubicacion=" + ubicacionNuevo +
+                          "&so=" + soNuevo +
+                          "&servicios=" + serviciosNuevo +
+                          "&caracteristicas=" + caracteristicasNuevo +
+                          "&tipo_plataforma=" + tipoPlataformaNuevo +
+                          "&observaciones=" + observacionesNuevo +
+                          "&dependencias=" + dependenciasNuevo +
+                          "&conexiones=" + conexionesNuevo +
+                          "&tipo_red=" + tipoRedNuevo +
+                          "&estatus=" + estatusNuevo;
 
-    // Construir la cadena de consulta con todos los campos
-    var queryString = "id=" + idNuevo +
-                      "&nombre=" + nombreNuevo +
-                      "&ip=" + ipNuevo +
-                      "&tipos=" + tiposNuevo +
-                      "&ubicacion=" + ubicacionNuevo +
-                      "&so=" + soNuevo +
-                      "&servicios=" + serviciosNuevo +
-                      "&caracteristicas=" + caracteristicasNuevo +
-                      "&tipo_plataforma=" + tipoPlataformaNuevo +
-                      "&observaciones=" + observacionesNuevo +
-                      "&dependencias=" + dependenciasNuevo +
-                      "&conexiones=" + conexionesNuevo +
-                      "&tipo_red=" + tipoRedNuevo +
-                      "&estatus=" + estatusNuevo;
-
-    // Agregar la cadena de consulta a la URL
-    xmlhttp.open("GET", "guardar_edicion.php?" + queryString, true);
-    xmlhttp.send();
-}
-    </script>
+        // Agregar la cadena de consulta a la URL
+        xmlhttp.open("GET", "guardar_edicion.php?" + queryString, true);
+        xmlhttp.send();
+    }
+</script>
 </body>
 </html>
 
