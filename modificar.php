@@ -163,6 +163,25 @@ th {
     </table>
 
     <script>
+   
+        function editarFila(id) {
+            var fila = document.getElementById('fila_' + id);
+            fila.innerHTML = "<td><input type='text' value='" + fila.cells[0].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[1].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[2].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[3].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[4].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[5].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[6].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[7].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[8].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[9].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[10].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[11].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[12].innerText + "'></td>" +
+                             "<td><input type='text' value='" + fila.cells[13].innerText + "'></td>" +
+                             "<td><button onclick='guardarEdicion(" + id + ")'>Guardar</button></td>";
+        }
 
 
         function guardarEdicion(id) {

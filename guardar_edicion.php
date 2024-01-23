@@ -20,7 +20,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $estatus = $_GET["estatus"];
     
     // Actualizar la fila en la base de datos
-    $consulta = "UPDATE servidores SET nombre = :nombre, ip = :ip WHERE id = :id";
+    $consulta = "UPDATE servidores SET 
+                 nombre = :nombre, 
+                 ip = :ip, 
+                 tipos = :tipos, 
+                 ubicacion = :ubicacion, 
+                 so = :so, 
+                 servicios = :servicios, 
+                 caracteristicas = :caracteristicas, 
+                 tipo_plataforma = :tipo_plataforma, 
+                 observaciones = :observaciones, 
+                 dependencias = :dependencias, 
+                 conexiones = :conexiones, 
+                 tipo_red = :tipo_red, 
+                 estatus = :estatus 
+                 WHERE id = :id";
+
     $statement = $db->prepare($consulta);
     $statement->bindParam(':id', $id);
     $statement->bindParam(':nombre', $nombre);
@@ -36,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $statement->bindParam(':conexiones', $conexiones);
     $statement->bindParam(':tipo_red', $tipo_red);
     $statement->bindParam(':estatus', $estatus);
-    // Repetir el proceso para los demás campos
 
     $exito = $statement->execute();
 

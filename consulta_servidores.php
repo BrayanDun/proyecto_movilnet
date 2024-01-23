@@ -11,15 +11,14 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
-
-body{
+body {
     display: flex;
     background-color: rgba(180, 173, 168, 0.466);
     align-items: center;
     justify-content: center;
 }
 
-.container{
+.container {
     position: relative;
     margin-top: 130px;
     margin-left: 350px;
@@ -60,7 +59,7 @@ button:hover {
     background-color: darkred;
 }
 
-.modif_desin{
+.modif_desin {
     margin-top: -20px;
 }
 
@@ -85,27 +84,26 @@ button:hover {
     cursor: pointer;
     border-color: whitesmoke;
 }
+
 table {
     position: absolute;
     background-color: rgb(252, 248, 248);
     margin-top: 100px;
-    width: 200px;
-    height: 200px;
-    justify-content: center;
+    width: 100%;  /* Ajuste el ancho de la tabla al 100% para que ocupe todo el contenedor */
+    border-collapse: collapse;  /* Añadido para colapsar los bordes de las celdas */
 }
 
-table, th, td, tr {
-
-    border: 2px solid;
-    margin-block: 20px;
-    padding: 2px;
-    border-color:  #FF585F;
-    justify-content: center;
+th, td {
+    border: 2px solid #FF585F;
+    padding: 8px;
+    text-align: left;
     font-size: 0.8rem;
 }
 
-
-
+th {
+    background-color: #FF585F;
+    color: white;
+}
 </style>
     <div class="container">    
         <label> CONSULTAR SERVIDORES </label>
