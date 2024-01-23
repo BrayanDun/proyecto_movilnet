@@ -37,9 +37,18 @@
             <label for="ip" class="text-left">IP del servidor</label>
             <input class="form-styling" type="text" name="ip" placeholder="">
           </div>
-          <div class="col-6">
+
+          <div class="select">
             <label for="tipos" class="text-left">Tipo</label>
-            <input class="form-styling" type="text" name="tipos" placeholder="">
+            <select name="tipos" id="tipos">
+              <option value="Base de Datos">Base de Datos</option>
+              <option value="Aplicativo">Aplicativo</option>
+              <option value="Respaldo">Respaldo</option>
+              <option value="Manejo de Version">Manejo de Versión</option>
+              <option value="Gestión">Gestión</option>
+              <option value="Balanceo">Balanceo</option>
+              <option value="Caché">Caché</option>
+            </select>
           </div>
         </div>
 
@@ -94,7 +103,14 @@
             <p><input class="form-styling_observacion" type="text" name="observaciones" placeholder=""></p>
           </div>
           <div class="col-14">
-            <label for="estatus" class="text-left1">Indique el estatus</label>
+          <label for="estatus" class="text-left1">Indique el estatus</label>
+            <label class="mycheckbox">
+            <input type="checkbox" name="">
+              <span>
+                <i class="fas fa-check on"></i>
+                <i class="fas fa-times off"></i>
+              </span>
+            </label>
           </div>
         </div>
         <div class="reg_confirm">

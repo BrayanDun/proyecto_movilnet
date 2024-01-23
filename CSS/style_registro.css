@@ -78,9 +78,7 @@ body {
   
 }
 
-.col-6 {
-  width: 50%;
-}
+
 
 .text-left1 {
   margin-top: -22px;
@@ -321,4 +319,34 @@ li {
   display: grid;
   place-items: center;
   margin-top: 25px;
+}
+
+
+
+.select {
+  display: inline-block;
+  position: relative;
+}
+
+.select label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.select select {
+  width: 200px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+.select select:focus {
+  outline: none;
+  border-color: #8cacc5;
+  box-shadow: 0 0 5px #8cacc5;
 }
