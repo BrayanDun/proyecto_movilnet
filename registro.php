@@ -64,10 +64,16 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="select">
             <label for="servicios" class="text-left">Servicios</label>
-            <input class="form-styling" type="text" name="servicios" placeholder="">
-          </div>
+            <select class='form-styling' name="servicios" id="servicios">
+              <option value="DHCP">DHCP</option>
+              <option value="WebLogic">WebLogic</option>
+              <option value="Correo">Correo</option>
+              <option value="Aplicaciones">Aplicaciones</option>
+              <option value="Versiones">Versiones</option>
+            </select>
+        </div>
           <div class="col-6">
             <label for="caracteristicas" class="text-left">Características</label>
             <input class="form-styling" type="text" name="caracteristicas" placeholder="">
@@ -75,10 +81,14 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
-            <label for="tipo_plataforma" class="text-left">Tipo de plataforma</label>
-            <input class="form-styling" type="text" name="tipo_plataforma" placeholder="">
-          </div>
+        <div class="select">
+          <label for="tipo_plataforma" class="text-left">Tipo de plataforma</label>
+          <select class='form-styling' name="tipo_plataforma" id="tipo_plataforma">
+            <option value="Dessarrollo">Desarrollo</option>
+            <option value="Calidad">Calidad</option>
+            <option value="Produccion">Produccion</option>
+          </select>
+        </div>
           <div class="col-6">
           <label for="tipo_red" class="text-left">Tipo de Red</label>
             <input class="form-styling" type="text" name="tipo_red" placeholder="">
@@ -103,15 +113,13 @@
             <p><input class="form-styling_observacion" type="text" name="observaciones" placeholder=""></p>
           </div>
           <div class="col-14">
-          <label for="estatus" class="text-left1">Indique el estatus</label>
-            <label class="mycheckbox">
-            <input type="checkbox" name="">
-              <span>
-                <i class="fas fa-check on"></i>
-                <i class="fas fa-times off"></i>
-              </span>
-            </label>
+            <label for="estatus" class="text-left1">Indique el estatus</label>
+            <select class='form-styling' name="estatus" id="estatus">
+              <option value="Habilitado">Habilitado</option>
+              <option value="Inhabilitado">Inhabilitado</option>
+            </select>
           </div>
+        </div>
         </div>
         <div class="reg_confirm">
         <input type="submit" value="Registrar servidor" class="btn-signup" id="submitBtn">
@@ -137,4 +145,6 @@
 require("./index.php");
 
 ?>
+
+
 
