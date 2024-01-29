@@ -1,29 +1,40 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     // Conectar a la base de datos
     $db = new PDO("pgsql:host=localhost;dbname=Movilnet", "postgres", "postgres");
 
     // Obtener el ID del servidor a desincorporar
-    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+    $id = intval($_GET['id']);
 
-    if ($id > 0) {
-        // Realizar la acción de desincorporación (cambiar el estado a 'Desincorporado')
-        $consulta = "UPDATE servidores SET estatus = 'Desincorporado' WHERE id = :id";
-        $statement = $db->prepare($consulta);
-        $statement->bindParam(':id', $id);
+    // Obtener los datos del servidor antes de desincorporar
+    $consultaSelect = "SELECT * FROM servidores WHERE id = :id";
+    $statementSelect = $db->prepare($consultaSelect);
+    $statementSelect->bindParam(':id', $id);
+    $statementSelect->execute();
+    $datosServidor = $statementSelect->fetch(PDO::FETCH_ASSOC);
 
-        // Ejecutar la consulta
-        $exito = $statement->execute();
+    if ($datosServidor) {
+        // Mover a la tabla de desincorporados
+        $consultaInsert = "INSERT INTO desincorporar (id, nombre, ip, tipos, ubicacion, so, servicios, caracteristicas, tipo_plataforma, observaciones, dependencias, conexiones, tipo_red, estatus) 
+                            VALUES (:id, :nombre, :ip, :tipos, :ubicacion, :so, :servicios, :caracteristicas, :tipo_plataforma, :observaciones, :dependencias, :conexiones, :tipo_red, :estatus)";
+        $statementInsert = $db->prepare($consultaInsert);
+        $statementInsert->execute($datosServidor);
+
+        // Eliminar de la tabla principal
+        $consultaDelete = "DELETE FROM servidores WHERE id = :id";
+        $statementDelete = $db->prepare($consultaDelete);
+        $statementDelete->bindParam(':id', $id);
+        $exitoDelete = $statementDelete->execute();
 
         // Manejar la respuesta
-        if ($exito) {
+        if ($exitoDelete) {
             echo "Desincorporación exitosa";
         } else {
             echo "Error al desincorporar el servidor";
-            print_r($statement->errorInfo()); // Imprimir información sobre errores
+            print_r($statementDelete->errorInfo()); // Imprimir información sobre errores
         }
     } else {
-        echo "ID de servidor no válido";
+        echo "No se encontraron datos del servidor";
     }
 
     // Cerrar la conexión a la base de datos

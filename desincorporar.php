@@ -158,27 +158,26 @@ th {
             ?>
         </tbody>
     </table>
-<script>
+    <script>
     function desincorporarServidor(id) {
-    // Realizar la solicitud al servidor para desincorporar usando fetch
-    fetch(`desincorporar_servidor.php?id=${id}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error de red: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            // Manejar la respuesta del servidor
-            console.log(data);
-            location.reload();  // Recargar la página después de la desincorporación
-        })
-        .catch(error => {
-            console.error('Error al desincorporar el servidor:', error);
-        });
-}
-
-    </script>
+        // Realizar la solicitud al servidor para desincorporar el servidor
+        fetch(`desincorporar_servidor.php?id=${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error de red: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Manejar la respuesta del servidor
+                console.log(data);
+                location.reload();  // Recargar la página después de la desincorporación
+            })
+            .catch(error => {
+                console.error('Error al desincorporar el servidor:', error);
+            });
+    }
+</script>
 
 </body>
 </html>

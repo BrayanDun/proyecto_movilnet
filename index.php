@@ -62,6 +62,14 @@
                         </a>
                     </li>
 
+                    <li class="nav-link">
+                        <a href="consulta_desincorporados.php">
+                        <i class="bx bx-search icon" ></i>
+                        <span class="text nav-text">Desincorporados</span>
+                        </a>
+                    </li>
+
+
                     <li class="bottom-content">
                         <li>
                             <a href="iniciar_sesion.html">
