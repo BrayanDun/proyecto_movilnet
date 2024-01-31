@@ -82,12 +82,12 @@ th {
     color: white;
 }
 </style>
-    <div class="container">   
-        <form action="consulta_servidores.php" method="POST">
-        <label> CONSULTAR SERVIDORES </label>
-        <input type="text" name="buscar"></input>
-        <input type="submit" value="BUSCAR" class="boton_busq"></input>
-        </form> 
+    <div class="container">
+    <form action="consulta_funcion.php" method="POST">
+        <label>CONSULTAR SERVIDORES</label>
+        <input type="text" name="buscar">
+        <input type="submit" value="BUSCAR" class="boton_busq">
+    </form>
     </div>
     
     <table>

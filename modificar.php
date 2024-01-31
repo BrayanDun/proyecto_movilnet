@@ -33,14 +33,14 @@ label {
 }
 
 input {
-    width: 350px;
+    width: 150px;
     padding: 15px;
     padding-right: 35px;
     font-size: 1rem;
     border-radius: 10px;
     border: 0;
     outline: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .boton_busq {
@@ -114,6 +114,7 @@ th {
     background-color: #FF585F;
     color: white;
 }
+
 </style>
 
 <body>
