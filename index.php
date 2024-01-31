@@ -64,7 +64,7 @@
 
                     <li class="nav-link">
                         <a href="consulta_desincorporados.php">
-                        <i class="bx bx-search icon" ></i>
+                        <i class='bx bxs-trash'></i>
                         <span class="text nav-text">Desincorporados</span>
                         </a>
                     </li>
