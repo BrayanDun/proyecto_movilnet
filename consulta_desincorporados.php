@@ -26,36 +26,13 @@ body {
 
 label {
     position: absolute;
-    margin: -49px;
-    margin-left: 65px;
-    font-size: large;
+    margin: -25px;
+    margin-left: 90px;
+    font-size: xx-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
 
-input {
-    width: 350px;
-    padding: 15px;
-    padding-right: 35px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 0;
-    outline: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.boton_busq {
-    background-color: #FF585F;
-    padding: 13.5px 18px;
-    position: absolute;
-    margin-top: -1.5px;
-    margin-left: -20px;
-
-    border-radius: 13.5px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
 
 button:hover {
     background-color: darkred;
@@ -85,8 +62,6 @@ th {
 </style>
     <div class="container">    
         <label>DESINCORPORADOS </label>
-        <input type="text" placeholder="Buscar..."></input>
-        <button class="boton_busq"><i class='bx bx-search-alt-2'></i></button>
     </div>
     
     <table>

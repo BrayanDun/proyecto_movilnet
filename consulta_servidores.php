@@ -20,14 +20,14 @@ body {
 
 .container {
     position: relative;
-    margin-top: 130px;
+    margin-top: 100px;
     margin-left: 350px;
 }
 
 label {
     position: absolute;
     margin: -49px;
-    margin-left: 65px;
+    margin-left: 55px;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
@@ -38,7 +38,7 @@ input {
     padding: 15px;
     padding-right: 35px;
     font-size: 1rem;
-    border-radius: 10px;
+
     border: 0;
     outline: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -46,12 +46,11 @@ input {
 
 .boton_busq {
     background-color: #FF585F;
-    padding: 13.5px 18px;
+    padding: 5px 4px;
     position: absolute;
-    margin-top: -1.5px;
-    margin-left: -20px;
+    margin-top: 45px;
+    margin-left: -350px;
 
-    border-radius: 13.5px;
     color: white;
     cursor: pointer;
     border-color: whitesmoke;
@@ -83,10 +82,12 @@ th {
     color: white;
 }
 </style>
-    <div class="container">    
+    <div class="container">   
+        <form action="consulta_servidores.php" method="POST">
         <label> CONSULTAR SERVIDORES </label>
-        <input type="text" placeholder="Buscar..."></input>
-        <button class="boton_busq"><i class='bx bx-search-alt-2'></i></button>
+        <input type="text" name="buscar"></input>
+        <input type="submit" value="BUSCAR" class="boton_busq"></input>
+        </form> 
     </div>
     
     <table>
@@ -152,7 +153,6 @@ th {
             echo "</tr>";
           }
           ?>
-    
         </tbody>
         </table>
 

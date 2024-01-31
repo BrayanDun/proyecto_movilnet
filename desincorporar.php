@@ -20,8 +20,8 @@ body {
 
 .container {
     position: relative;
-    margin-top: 60px;
-    margin-left: 220px;
+    margin-top: 100px;
+    margin-left: 350px;
 }
 
 label {
@@ -33,53 +33,9 @@ label {
     color: #FF585F;
 }
 
-input {
-    width: 350px;
-    padding: 15px;
-    padding-right: 35px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 0;
-    outline: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.boton_busq {
-    background-color: #FF585F;
-    padding: 17px 15px;
-    position: relative;
-    margin: auto;
-    border-radius: 15px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
 
 button:hover {
     background-color: darkred;
-}
-
-
-.modificar {
-    background-color: #FF585F;
-    padding: 6px 6px;
-    position: relative;
-    margin-right: 10px;
-    border-radius: 9px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
-
-.desincorp {
-    background-color: #FF585F;
-    padding: 6px 6px;
-    position: relative;
-    margin-right: 10px;
-    border-radius: 9px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
 }
 
 table {
