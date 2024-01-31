@@ -70,7 +70,7 @@
                     </li>
 
 
-                    <li class="bottom-content">
+                    <li class="nav-link">
                         <li>
                             <a href="iniciar_sesion.html">
                             <i class='bx bx-log-out icon'></i>
