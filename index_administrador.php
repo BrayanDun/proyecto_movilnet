@@ -1,4 +1,14 @@
+<?php
+// Inicia la sesión
+session_start();
 
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION["p00"])) {
+    // Redirige a la página de inicio de sesión
+    header("Location: iniciar_sesion.html");
+    exit(); // Asegúrate de detener el script después de redirigir
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +38,14 @@
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="./index.php">
+                        <a href="./index_administrador.php">
                         <i class='bx bx-home icon' ></i>
                         <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
                     
                     <li class="nav-link">
-                        <a href="consulta_servidores.php">
+                        <a href="consulta_funcion.php">
                         <i class='bx bx-search icon'></i>
                         <span class="text nav-text">Consultar</span>
                         </a>

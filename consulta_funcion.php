@@ -1,4 +1,15 @@
 <?php ob_start(); ?>
+<?php
+// Inicia la sesión
+session_start();
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION["p00"])) {
+    // Redirige a la página de inicio de sesión
+    header("Location: iniciar_sesion.html");
+    exit(); // Asegúrate de detener el script después de redirigir
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,6 +192,6 @@ if ($stmt->rowCount() > 0) {
 
 <?php 
 
-require("./index.php");
+require("./index_administrador.php");
 
 ?>

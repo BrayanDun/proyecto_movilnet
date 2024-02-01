@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,7 +81,7 @@ th {
     color: white;
 }
 </style>
-    <div class="container">
+<div class="container">
     <form action="consulta_funcion.php" method="POST">
         <label>CONSULTAR SERVIDORES</label>
         <input type="text" name="buscar">
@@ -110,52 +109,70 @@ th {
         </tr>
         </thead>
         <tbody>
-    
-          <?php
-          // Configuraciones de la base de datos
-          $host = "localhost";
-          $dbname = "Movilnet";
-          $username = "postgres";
-          $password = "postgres";
-    
-          // Crea una conexión a la base de datos
-          $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
-    
-          // Consultar los datos de todos los servidores
-          $sql = "SELECT * FROM servidores";
-    
-          // Ejecutar la consulta SQL
-          $stmt = $conn->query($sql);
-    
-          // Obtener los resultados de la consulta SQL
-          $result = $stmt->fetchAll();
-    
-          // Cerrar la conexión a PostgreSQL
-          $conn = null;
-    
-          // Imprimir los resultados de la consulta SQL
-          foreach ($result as $row) {
-            echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $row['nombre'] . "</td>";
-            echo "<td>" . $row['ip'] . "</td>";
-            echo "<td>" . $row['tipos'] . "</td>";
-            echo "<td>" . $row['ubicacion'] . "</td>";
-            echo "<td>" . $row['so'] . "</td>";
-            echo "<td>" . $row['servicios'] . "</td>";
-            echo "<td>" . $row['caracteristicas'] . "</td>";
-            echo "<td>" . $row['tipo_plataforma'] . "</td>";
-            echo "<td>" . $row['observaciones'] . "</td>";
-            echo "<td>" . $row['dependencias'] . "</td>";
-            echo "<td>" . $row['conexiones'] . "</td>";
-            echo "<td>" . $row['tipo_red'] . "</td>";
-            echo "<td>" . $row['estatus'] . "</td>";
-            echo "</tr>";
-          }
-          ?>
-        </tbody>
-        </table>
 
+<?php
+// Configuraciones de la base de datos
+$host = "localhost";
+$dbname = "Movilnet";
+$username = "postgres";
+$password = "postgres";
+
+// Crea una conexión a la base de datos
+$conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable error handling
+
+$buscar = isset($_POST['buscar']) ? $_POST['buscar'] : "";
+
+// $SQL_READ = "SELECT * FROM servidores WHERE id LIKE $buscar OR nombre LIKE $buscar OR ip LIKE $buscar";
+$SQL_READ = "SELECT * FROM servidores WHERE  text(id) LIKE :buscar OR nombre LIKE :buscar OR ip LIKE :buscar OR ubicacion LIKE :buscar OR estatus LIKE :buscar";
+$stmt = $conn->prepare($SQL_READ);
+$buscar = "%" . $buscar . "%";
+$stmt->bindParam(":buscar", $buscar); // Use prepared statements for security
+$stmt->execute();
+
+if ($stmt->rowCount() > 0) {
+    echo "<table>";
+    echo "<tr>";
+    echo "<th>ID</th>";
+    echo "<th>nombre</th>";
+    echo "<th>ip</th>";
+    echo "<th>tipos</th>";
+    echo "<th>ubicacion</th>";
+    echo "<th>so</th>";
+    echo "<th>servicios</th>";
+    echo "<th>caracteristicas</th>";
+    echo "<th>tipo_plataforma</th>";
+    echo "<th>observaciones</th>";
+    echo "<th>dependencias</th>";
+    echo "<th>conexiones</th>";
+    echo "<th>tipo_red</th>";
+    echo "<th>estatus</th>";
+    echo "</tr>";
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['nombre'] . "</td>";
+        echo "<td>" . $row['ip'] . "</td>";
+        echo "<td>" . $row['tipos'] . "</td>";
+        echo "<td>" . $row['ubicacion'] . "</td>";
+        echo "<td>" . $row['so'] . "</td>";
+        echo "<td>" . $row['servicios'] . "</td>";
+        echo "<td>" . $row['caracteristicas'] . "</td>";
+        echo "<td>" . $row['tipo_plataforma'] . "</td>";
+        echo "<td>" . $row['observaciones'] . "</td>";
+        echo "<td>" . $row['dependencias'] . "</td>";
+        echo "<td>" . $row['conexiones'] . "</td>";
+        echo "<td>" . $row['tipo_red'] . "</td>";
+        echo "<td>" . $row['estatus'] . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "No se encontraron resultados.";
+}
+?>
 </body>
 
 </html>
@@ -164,6 +181,6 @@ th {
 
 <?php 
 
-require("./index.php");
+require("./index_usuario.php");
 
 ?>

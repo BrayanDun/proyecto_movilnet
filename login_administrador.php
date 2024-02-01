@@ -11,24 +11,24 @@ $p00 = $_POST["p00"];
 $contraseña = $_POST["contraseña"];
 
 // Consulta SQL para buscar el usuario
-$sql = "SELECT * FROM usuarios WHERE p00 = '$p00' AND contraseña = '$contraseña'";
+$sql = "SELECT * FROM administrador WHERE p00 = '$p00' AND contraseña = '$contraseña'";
 
 // Ejecuta la consulta
 $resultados = $conn->query($sql);
 
 // Verifica si el usuario existe
-// Verifica si el usuario existe
 if ($resultados->rowCount() > 0) {
-  // El usuario existe
-  // Inicia sesión
-  session_start();
-  $_SESSION["p00"] = $p00;
-  header("Location: index.php");
+    // El usuario existe
+    // Inicia sesión
+    session_start();
+    $_SESSION["p00"] = $p00;
+    header("Location: index_administrador.php");
 } else {
-  // El usuario no existe
-  // Muestra un mensaje de error
-  echo "El usuario o la contraseña no son válidos.";
+    // El usuario no existe
+    // Muestra un mensaje de error
+    echo "El usuario o la contraseña no son válidos.";
 }
+
 // Cierra la conexión
 $conn = null;
 ?>

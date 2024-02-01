@@ -248,6 +248,6 @@ th {
 
 <?php 
 
-require("./index.php");
+require("./index_administrador.php");
 
 ?>
