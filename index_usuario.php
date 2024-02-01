@@ -51,14 +51,13 @@ if (!isset($_SESSION["p00"])) {
                         </a>
                     </li>
 
+                    <li class="nav-link">
+                        <a href="cerrar_sesion.php">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Salir</span>
+                        </a>
+                    </li>
 
-                    <li class="bottom-content">
-                        <li>
-                            <a href="iniciar_sesion.html">
-                            <i class='bx bx-log-out icon'></i>
-                            <span class="text nav-text">Salir</span>
-                            </a>
-                        </li>
                     </li>
 
                 </ul>

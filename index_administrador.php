@@ -5,7 +5,7 @@ session_start();
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION["p00"])) {
     // Redirige a la página de inicio de sesión
-    header("Location: iniciar_sesion.html");
+    header("Location: iniciar_sesion_administrador.html");
     exit(); // Asegúrate de detener el script después de redirigir
 }
 ?>
@@ -81,12 +81,10 @@ if (!isset($_SESSION["p00"])) {
 
 
                     <li class="nav-link">
-                        <li>
-                            <a href="iniciar_sesion.html">
-                            <i class='bx bx-log-out icon'></i>
-                            <span class="text nav-text">Salir</span>
-                            </a>
-                        </li>
+                        <a href="cerrar_sesion_administrador.php">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Salir</span>
+                        </a>
                     </li>
 
                 </ul>
