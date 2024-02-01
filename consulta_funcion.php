@@ -1,3 +1,114 @@
+<?php ob_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Consulta de servidores</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/b408879b64.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+body {
+    display: flex;
+    background-color: rgba(180, 173, 168, 0.466);
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 350px;
+}
+
+label {
+    position: absolute;
+    margin: -49px;
+    margin-left: 55px;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #FF585F;
+}
+
+input {
+    width: 350px;
+    padding: 15px;
+    padding-right: 35px;
+    font-size: 1rem;
+
+    border: 0;
+    outline: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.boton_busq {
+    background-color: #FF585F;
+    padding: 5px 4px;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: -350px;
+
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+
+
+table {
+    position: absolute;
+    background-color: rgb(252, 248, 248);
+    margin-top: 50px;
+    width: 100%;  /* Ajuste el ancho de la tabla al 100% para que ocupe todo el contenedor */
+    border-collapse: collapse;  /* Añadido para colapsar los bordes de las celdas */
+}
+
+th, td {
+    border: 2px solid #FF585F;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+th {
+    background-color: #FF585F;
+    color: white;
+}
+</style>
+<div class="container">
+    <form action="consulta_funcion.php" method="POST">
+        <label>CONSULTAR SERVIDORES</label>
+        <input type="text" name="buscar">
+        <input type="submit" value="BUSCAR" class="boton_busq">
+    </form>
+    </div>
+    
+    <table>
+        <thead>
+        <tr>
+            <th> ID </th>
+            <th> Nombre </th>
+            <th> IP </th>
+            <th> Tipos </th>
+            <th> Ubicación </th>
+            <th> SO </th>
+            <th> Servicios </th>
+            <th> Características </th>
+            <th> Tipo de plataforma </th>
+            <th> Observaciones </th>
+            <th> Dependencias </th>
+            <th> Conexiones </th>
+            <th> Tipo de red </th>
+            <th> Estatus </th>
+        </tr>
+        </thead>
+        <tbody>
 
 <?php
 // Configuraciones de la base de datos
@@ -12,15 +123,18 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable error 
 
 $buscar = isset($_POST['buscar']) ? $_POST['buscar'] : "";
 
-$SQL_READ = "SELECT * FROM servidores WHERE id LIKE :buscar OR nombre LIKE :buscar OR ip LIKE :buscar";
+// $SQL_READ = "SELECT * FROM servidores WHERE id LIKE $buscar OR nombre LIKE $buscar OR ip LIKE $buscar";
+$SQL_READ = "SELECT * FROM servidores WHERE  text(id) LIKE :buscar OR nombre LIKE :buscar OR ip LIKE :buscar OR ubicacion LIKE :buscar OR estatus LIKE :buscar";
 $stmt = $conn->prepare($SQL_READ);
-$stmt->bindParam(':buscar', $buscar); // Use prepared statements for security
+$buscar = "%" . $buscar . "%";
+$stmt->bindParam(":buscar", $buscar); // Use prepared statements for security
 $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
     echo "<table>";
     echo "<tr>";
     echo "<th>ID</th>";
+    echo "<th>nombre</th>";
     echo "<th>ip</th>";
     echo "<th>tipos</th>";
     echo "<th>ubicacion</th>";
@@ -58,4 +172,15 @@ if ($stmt->rowCount() > 0) {
 } else {
     echo "No se encontraron resultados.";
 }
+?>
+</body>
+
+</html>
+
+<?php $contents = ob_get_clean(); ?>
+
+<?php 
+
+require("./index.php");
+
 ?>
