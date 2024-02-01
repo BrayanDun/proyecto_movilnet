@@ -57,6 +57,17 @@ th {
     background-color: #FF585F;
     color: white;
 }
+
+.desincorp {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
 </style>
 
 <body>
