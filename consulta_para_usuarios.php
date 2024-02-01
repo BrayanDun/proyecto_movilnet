@@ -82,7 +82,7 @@ th {
 }
 </style>
 <div class="container">
-    <form action="consulta_funcion.php" method="POST">
+    <form action="consulta_para_usuarios.php" method="POST">
         <label>CONSULTAR SERVIDORES</label>
         <input type="text" name="buscar">
         <input type="submit" value="BUSCAR" class="boton_busq">
@@ -133,7 +133,7 @@ $stmt->execute();
 if ($stmt->rowCount() > 0) {
     echo "<table>";
     echo "<tr>";
-    echo "<th>ID</th>";
+    echo "<th>id</th>";
     echo "<th>nombre</th>";
     echo "<th>ip</th>";
     echo "<th>tipos</th>";
