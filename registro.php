@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -95,11 +96,33 @@
           </div>
         </div>
 
-        <div class="row3">
-          <div class="col-6">
-            <label for="dependencias" class="text-left">Dependencias</label>
-            <input class="form-styling" type="text" name="dependencias" placeholder="">
-          </div>
+          <div class="row3">
+            <div class="col-6">
+              <label for="dependencias" class="text-left">Dependencias</label>
+              <select class="form-styling" name="dependencias" id="dependencias">
+                <?php
+                  // Conectar a la base de datos
+                  $host = "localhost";
+                  $dbname = "Movilnet";
+                  $username = "postgres";
+                  $password = "postgres";
+                  $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+
+                  // Consultar los nombres de los servidores registrados
+                  $sql = "SELECT nombre FROM servidores";
+                  $stmt = $conn->query($sql);
+                  $result = $stmt->fetchAll();
+
+                  // Mostrar opciones en el campo de selección
+                  foreach ($result as $row) {
+                    echo "<option value='" . $row['nombre'] . "'>" . $row['nombre'] . "</option>";
+                  }
+
+                  // Cerrar la conexión
+                  $conn = null;
+                ?>
+              </select>
+            </div>
           <div class="col-6">
             <label for="conexiones" class="text-left">Conexiones</label>
             <input class="form-styling" type="text" name="conexiones" placeholder="">

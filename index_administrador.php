@@ -73,14 +73,6 @@ if (!isset($_SESSION["p00"])) {
                     </li>
 
                     <li class="nav-link">
-                        <a href="consulta_desincorporados.php">
-                        <i class='bx bxs-trash'></i>
-                        <span class="text nav-text">Desincorporados</span>
-                        </a>
-                    </li>
-
-
-                    <li class="nav-link">
                         <a href="cerrar_sesion_administrador.php">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Salir</span>

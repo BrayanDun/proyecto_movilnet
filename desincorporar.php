@@ -68,7 +68,33 @@ th {
     cursor: pointer;
     border-color: whitesmoke;
 }
+
+
+.papelera {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: absolute;
+    margin-left: 1059px;
+    margin-top: 74PX;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
+
+h1 {
+    position: absolute;
+    margin: 5px;
+    margin-LEFT: 1059px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #FF585F;
+}
+
 </style>
+<h1>Servidores Desincorporados</h1>
+    <form action="consulta_desincorporados.php">
+    <button class='papelera'>Desincorporados</button>
+    </form>
 
 <body>
     <div class="container">

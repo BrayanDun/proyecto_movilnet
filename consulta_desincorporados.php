@@ -64,6 +64,12 @@ th {
         <label>DESINCORPORADOS </label>
     </div>
     
+    <a href="javascript:history.back()" style="text-decoration: none;">
+        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;">
+            <i class="fas fa-arrow-left"></i> Atrás
+        </button>
+    </a>
+
     <table>
         <thead>
         <tr>

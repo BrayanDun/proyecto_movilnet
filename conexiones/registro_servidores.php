@@ -59,6 +59,6 @@ if ($stmt->rowCount() == 0) {
 // Cerrar la conexión a PostgreSQL
 $conn = null;
 
-header("location: ../consulta_servidores.php");
+header("location: ../consulta_funcion.php");
 
 ?>
