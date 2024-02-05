@@ -20,7 +20,7 @@ body {
 .container {
     position: relative;
     margin-top: 100px;
-    margin-left: 250px;
+    margin-left: 350px;
 }
 
 label {
@@ -32,13 +32,6 @@ label {
     color: #FF585F;
 }
 
-h1 {
-    position: absolute;
-    margin: -70px;
-    margin-LEFT: 830px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #FF585F;
-}
 input {
     width: 350px;
     padding: 15px;
@@ -66,29 +59,7 @@ button:hover {
     background-color: darkred;
 }
 
-.grafic_estatus {
-    background-color: #FF585F;
-    padding: 6px 6px;
-    position: absolute;
-    margin-left: 900px;
-    margin-top: -10PX;
-    border-radius: 3px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
 
-.grafic_tipo {
-    background-color: #FF585F;
-    padding: 6px 6px;
-    position: absolute;
-    margin-left: 740px;
-    margin-top: -10PX;
-    border-radius: 3px;
-    color: white;
-    cursor: pointer;
-    border-color: whitesmoke;
-}
 
 table {
     position: absolute;
@@ -117,14 +88,6 @@ th {
         <input type="submit" value="BUSCAR" class="boton_busq">
     </form>
     </div>
-    <h1>GRAFICAS</h1>
-    <form action="grafica_estatus.php">
-    <button class='grafic_estatus'>Estatus de servidores</button>
-    </form>
-
-    <form action="grafica_tipos.php">
-    <button class='grafic_tipo'>Tipos de servidores</button>
-    </form>
     
     <table>
         <thead>
@@ -160,6 +123,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable error 
 
 $buscar = isset($_POST['buscar']) ? $_POST['buscar'] : "";
 
+// $SQL_READ = "SELECT * FROM servidores WHERE id LIKE $buscar OR nombre LIKE $buscar OR ip LIKE $buscar";
 $SQL_READ = "SELECT * FROM servidores WHERE  text(id) LIKE :buscar OR nombre LIKE :buscar OR ip LIKE :buscar OR ubicacion LIKE :buscar OR estatus LIKE :buscar";
 $stmt = $conn->prepare($SQL_READ);
 $buscar = "%" . $buscar . "%";
