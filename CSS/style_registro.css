@@ -271,14 +271,14 @@ li {
 
 /* Botón de registro */
 .btn-signup {
-  margin-right: -121px;
-  width: 40%;
-  height: 40px;
-  border: none;
-  border-radius: 20px;
-  color: #000;
-  background: #e4d7d7;
-  cursor: pointer;
+    margin-right: -121px;
+    width: 13%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    color: #000;
+    background: #e4d7d7;
+    cursor: pointer;
 }
 
 /* Animación de botón de registro */
@@ -347,3 +347,6 @@ li {
   border-color: rgba(255, 255, 255, 0.808);
   box-shadow: 0 0 5px #9da8b1;
 }
+
+
+

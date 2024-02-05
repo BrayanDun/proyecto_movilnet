@@ -26,18 +26,17 @@ body {
 label {
     position: absolute;
     margin: -49px;
-    margin-left: 55px;
+    margin-left: 10px;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
 
 input {
-    width: 350px;
+    width: 250px;
     padding: 15px;
     padding-right: 35px;
     font-size: 1rem;
-
     border: 0;
     outline: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -48,8 +47,7 @@ input {
     padding: 5px 4px;
     position: absolute;
     margin-top: 45px;
-    margin-left: -350px;
-
+    margin-left: -250px;
     color: white;
     cursor: pointer;
     border-color: whitesmoke;
@@ -88,6 +86,13 @@ th {
         <input type="submit" value="BUSCAR" class="boton_busq">
     </form>
     </div>
+    
+    
+    <a href="javascript:history.back()" style="text-decoration: none;">
+        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;">
+            <i class="fas fa-arrow-left"></i> Atrás
+        </button>
+    </a>
     
     <table>
         <thead>

@@ -12,6 +12,21 @@
   <link rel="stylesheet" href="CSS\style_registro.css">
 </head>
 
+<a href="javascript:history.back()" style="text-decoration: none;">
+        <button style="   
+          margin-right: -99px;
+          width: 13%;
+          height: 40px;
+          border: none;
+          border-radius: 17px;
+          color: #ffffff;
+          background: #FF585F;
+          cursor: pointer;
+          ">
+        <i class="fas fa-arrow-left"></i> Atrás
+        </button>
+    </a>
+
 <body>
   <div class="container">
     <div class="frame">
@@ -148,10 +163,6 @@
         <input type="submit" value="Registrar servidor" class="btn-signup" id="submitBtn">
         </div>
 
-        <div class="reg_cancel">
-        <input type="submit" value="Cancelar" class="btn-signup" id="submitBtn">
-        </div>
-        
       </div>
     
     </div>

@@ -22,7 +22,7 @@ if ($resultados->rowCount() > 0) {
     // Inicia sesión
     session_start();
     $_SESSION["p00"] = $p00;
-    header("Location: index_administrador.php");
+    header("Location: home.php");
 } else {
     // El usuario no existe
     // Muestra un mensaje de error
