@@ -74,7 +74,7 @@ th {
     background-color: #FF585F;
     padding: 6px 6px;
     position: absolute;
-    margin-left: 1059px;
+    margin-left: 124px;
     margin-top: 74PX;
     border-radius: 3px;
     color: white;
@@ -84,8 +84,8 @@ th {
 
 h1 {
     position: absolute;
-    margin: 5px;
-    margin-LEFT: 1059px;
+    margin: 25px;
+    margin-LEFT: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
