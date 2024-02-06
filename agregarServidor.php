@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../recursos/CSS/styleMain.css">
-    <link rel="stylesheet" href="../recursos/CSS/form.css">
+    <link rel="stylesheet" href="CSS/form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="../recursos/IMG/LogoSeniat.png"> <!-- Logo del Sistema -->
-    <title> Registrar Contribuyente | SENIAT </title> <!-- Nombre de la Interfaz -->
+    <link rel="icon" href="img\logo-movilnet2.PNG"> <!-- Logo del Sistema -->
+    <title> Registrar</title> <!-- Nombre de la Interfaz -->
 </head>
 
 <body>
@@ -18,60 +18,10 @@
 
         <!-- Logo del Header, SENIAT -->
         <div class="logo">
-            <a href="./index.php">
-                <img src="../recursos/IMG/Logo.png" alt="logo del seniat">
+            <a href="">
+                <img src="img\logo-movilnet2.PNG" alt="logo">
             </a>
         </div>
-
-        <!-- Barra de Menú Responsive -->
-        <input type="checkbox" id="menu-bar">
-        <label for="menu-bar">Menu</label>
-
-        <!-- Botones para interaturar con las interfaces -->
-        <nav class="navbar">
-            <ul>
-                <!-- Modulo de Registros de Coordinador -->
-                <li><a class="linea1" href="">Registros del Coordinador </a>
-                    <ul class="barrita">
-                        <a href="../PHP/vistaTarifas.php">Tarifas</a>
-                        <a href="../PHP/vistaUnidadTributariaAntigua.php">Unidad Tributaria Antigua</a>
-                        <a href="../PHP/vistaUnidadTributaria.php">Unidad Tributaria</a>
-                        <a href="../PHP/agregarLiquidador.php">Registro de Liquidadores</a>
-                        <a href="../PHP/agregarContribuyentes.php">Registro Contribuyentes</a>
-                        <a href="../PHP/vistaAgregarProductos.php">Agregar Productos</a>
-                    </ul>
-                </li>
-
-                <!-- Modulo de Liquidacion -->
-                <li><a class="linea2" href="">Liquidación </a>
-                    <ul class="barrita">
-                        <a href="#">Licores</a>
-                        <a href="../PHP/liquidacionCigarrillos.php">Cigarrillos</a>
-                        <a href="#">Fósforos</a>
-                    </ul>
-                </li>
-
-                <!-- Modulo de Consultas -->
-                <li><a class="linea3" href="../PHP/vistaConsultas.php">Consulta</a></li>
-            </ul>
-
-        </nav>
-        <!--    Fin    -->
-
-        <!--    Boton para salir de un usuario logeado    -->
-        <div class="salir">
-            <a href="#">
-                <button class="exit">Salir</button>
-            </a>
-        </div>
-        <!--    Fin del Boton de "Salir" de la interfaz    -->
-
-
-
-    </header>
-    <!--    Fin del Header de la interfaz    -->
-
-
 
     <!-- Interfaz -->
     <div class="container">

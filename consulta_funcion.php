@@ -1,4 +1,5 @@
-<?php ob_start(); ?>
+<?php ob_start();?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,7 +87,11 @@ th {
         <input type="submit" value="BUSCAR" class="boton_busq">
     </form>
     </div>
-    
+    <!-- Botón de exportación -->
+        <form action="exportar.php" method="POST" target="_blank">
+            <input type="hidden" name="exportar" value="1">
+            <input style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;" type="submit" value="Exportar a CSV">
+        </form>
     
     <a href="javascript:history.back()" style="text-decoration: none;">
         <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;">
@@ -111,6 +116,8 @@ th {
             <th> Conexiones </th>
             <th> Tipo de red </th>
             <th> Estatus </th>
+            <th> Creado </th>
+            <th> Modificado </th>
         </tr>
         </thead>
         <tbody>
@@ -139,19 +146,21 @@ if ($stmt->rowCount() > 0) {
     echo "<table>";
     echo "<tr>";
     echo "<th>ID</th>";
-    echo "<th>nombre</th>";
-    echo "<th>ip</th>";
-    echo "<th>tipos</th>";
-    echo "<th>ubicacion</th>";
-    echo "<th>so</th>";
-    echo "<th>servicios</th>";
-    echo "<th>caracteristicas</th>";
-    echo "<th>tipo_plataforma</th>";
-    echo "<th>observaciones</th>";
-    echo "<th>dependencias</th>";
-    echo "<th>conexiones</th>";
-    echo "<th>tipo_red</th>";
-    echo "<th>estatus</th>";
+    echo "<th>Nombre</th>";
+    echo "<th>IP</th>";
+    echo "<th>Tipos</th>";
+    echo "<th>Ubicación</th>";
+    echo "<th>SO</th>";
+    echo "<th>Servicios</th>";
+    echo "<th>Características</th>";
+    echo "<th>Tipo de plataforma</th>";
+    echo "<th>Observaciones</th>";
+    echo "<th>Dependencias</th>";
+    echo "<th>Conexiones</th>";
+    echo "<th>Tipo de Red</th>";
+    echo "<th>Estatus</th>";
+    echo "<th>Creado</th>";
+    echo "<th>Modificado</th>";
     echo "</tr>";
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -170,6 +179,8 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['conexiones'] . "</td>";
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
+        echo "<td>" . $row['creado_en'] . "</td>";
+        echo "<td>" . $row['modificado_en'] . "</td>";
         echo "</tr>";
     }
 

@@ -8,6 +8,22 @@ $password = "postgres";
 // Crea una conexión a la base de datos
 $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
 
+    // Obtener la ID del formulario
+    $id = $_POST['id'];
+
+    // Consultar si la ID ya existe en la base de datos
+    $sql_check_id = "SELECT id FROM servidores WHERE id = :id";
+    $stmt_check_id = $conn->prepare($sql_check_id);
+    $stmt_check_id->bindParam(':id', $id);
+    $stmt_check_id->execute();
+
+    // Si la ID ya está registrada, redirigir a una página de error
+    if ($stmt_check_id->rowCount() > 0) {
+        header("Location: error-registro.php?message=No se puede registrar un servidor con la misma ID. Por favor, elija una ID diferente.");
+        exit; // Detener la ejecución del script
+    }
+
+
 // Recibir los datos del formulario
 $id = $_POST['id'];
 $nombre = $_POST['nombre'];
