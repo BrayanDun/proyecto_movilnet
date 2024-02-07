@@ -120,6 +120,8 @@ h1 {
                 <th> Conexiones </th>
                 <th> Tipo de red </th>
                 <th> Estatus </th>
+                <th> Creado </th>
+                <th> Modificado </th>
                 <th> Acciones </th>  <!-- Agregada columna de acciones -->
             </tr>
         </thead>
@@ -145,6 +147,8 @@ h1 {
                 echo "<td>{$fila['conexiones']}</td>";
                 echo "<td>{$fila['tipo_red']}</td>";
                 echo "<td>{$fila['estatus']}</td>";
+                echo "<td>{$fila['creado_en']}</td>";
+                echo "<td>{$fila['modificado_en']}</td>";
                 echo "<td><button class='desincorp' onclick='restaurarServidor({$fila['id']})'>Restaurar</button>
                 </td>";
                 echo "</tr>";

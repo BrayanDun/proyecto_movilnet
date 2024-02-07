@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
 
     if ($datosServidor) {
         // Mover a la tabla de desincorporados
-        $consultaInsert = "INSERT INTO desincorporar (id, nombre, ip, tipos, ubicacion, so, servicios, caracteristicas, tipo_plataforma, observaciones, dependencias, conexiones, tipo_red, estatus) 
-                            VALUES (:id, :nombre, :ip, :tipos, :ubicacion, :so, :servicios, :caracteristicas, :tipo_plataforma, :observaciones, :dependencias, :conexiones, :tipo_red, :estatus)";
+        $consultaInsert = "INSERT INTO desincorporar (id, nombre, ip, tipos, ubicacion, so, servicios, caracteristicas, tipo_plataforma, observaciones, dependencias, conexiones, tipo_red, estatus, creado_en, modificado_en) 
+                            VALUES (:id, :nombre, :ip, :tipos, :ubicacion, :so, :servicios, :caracteristicas, :tipo_plataforma, :observaciones, :dependencias, :conexiones, :tipo_red, :estatus, :creado_en, :modificado_en)";
         $statementInsert = $db->prepare($consultaInsert);
         $statementInsert->execute($datosServidor);
 

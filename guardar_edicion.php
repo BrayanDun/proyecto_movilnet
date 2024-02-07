@@ -1,70 +1,64 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Conectar a la base de datos
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Conexión a la base de datos (ajusta los parámetros según tu configuración)
+try {
     $db = new PDO("pgsql:host=localhost;dbname=Movilnet", "postgres", "postgres");
-
-    // Obtener los datos enviados desde la página HTML
-    $id = $_GET['id'];
-    $nombre = $_GET["nombre"];
-    $ip = $_GET["ip"];
-    $tipos = $_GET["tipos"];
-    $ubicacion = $_GET["ubicacion"];
-    $so = $_GET["so"];
-    $servicios = $_GET["servicios"];
-    $caracteristicas = $_GET["caracteristicas"];
-    $tipo_plataforma = $_GET["tipo_plataforma"];
-    $observaciones = $_GET["observaciones"];
-    $dependencias = $_GET["dependencias"];
-    $conexiones = $_GET["conexiones"];
-    $tipo_red = $_GET["tipo_red"];
-    $estatus = $_GET["estatus"];
-    
-    // Actualizar la fila en la base de datos
-    $consulta = "UPDATE servidores SET 
-        nombre = :nombre, 
-        ip = :ip, 
-        tipos = :tipos,
-        ubicacion = :ubicacion,
-        so = :so,
-        servicios = :servicios,
-        caracteristicas = :caracteristicas,
-        tipo_plataforma = :tipo_plataforma,
-        observaciones = :observaciones,
-        dependencias = :dependencias,
-        conexiones = :conexiones,
-        tipo_red = :tipo_red,
-        estatus = :estatus
-        WHERE id = :id";
-
-    $statement = $db->prepare($consulta);
-    $statement->bindParam(':id', $id);
-    $statement->bindParam(':nombre', $nombre);
-    $statement->bindParam(':ip', $ip);
-    $statement->bindParam(':tipos', $tipos);
-    $statement->bindParam(':ubicacion', $ubicacion);
-    $statement->bindParam(':so', $so);
-    $statement->bindParam(':servicios', $servicios);
-    $statement->bindParam(':caracteristicas', $caracteristicas);
-    $statement->bindParam(':tipo_plataforma', $tipo_plataforma);
-    $statement->bindParam(':observaciones', $observaciones);
-    $statement->bindParam(':dependencias', $dependencias);
-    $statement->bindParam(':conexiones', $conexiones);
-    $statement->bindParam(':tipo_red', $tipo_red);
-    $statement->bindParam(':estatus', $estatus);
-
-    $exito = $statement->execute();
-
-    // Manejar la respuesta
-    if ($exito) {
-        echo "Actualización exitosa";
-    } else {
-        echo "Error al actualizar la base de datos";
-        print_r($statement->errorInfo()); // Imprimir información sobre errores
-    }
-
-    // Cerrar la conexión a la base de datos
-    $db = null;
-} else {
-    echo "Acceso no permitido";
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error al conectar: " . $e->getMessage());
 }
+
+// Recibir datos del cliente
+$data = json_decode(file_get_contents("php://input"));
+
+// Mensajes de depuración para verificar los datos
+var_dump($data);
+
+// Actualizar la fila en la base de datos
+$query = "UPDATE servidores 
+          SET nombre = :nombre, 
+              ip = :ip, 
+              tipos = :tipos, 
+              ubicacion = :ubicacion, 
+              so = :so, 
+              servicios = :servicios,
+              caracteristicas = :caracteristicas,
+              tipo_plataforma = :tipo_plataforma,
+              observaciones = :observaciones,
+              dependencias = :dependencias,
+              conexiones = :conexiones,
+              tipo_red = :tipo_red,
+              estatus = :estatus,
+              modificado_en = CURRENT_TIMESTAMP  -- Actualiza la hora de modificación
+          WHERE id = :id";
+
+try {
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':nombre', $data->nombre);
+    $stmt->bindParam(':ip', $data->ip);
+    $stmt->bindParam(':tipos', $data->tipos);
+    $stmt->bindParam(':ubicacion', $data->ubicacion);
+    $stmt->bindParam(':so', $data->so);
+    $stmt->bindParam(':servicios', $data->servicios);
+    $stmt->bindParam(':caracteristicas', $data->caracteristicas);
+    $stmt->bindParam(':tipo_plataforma', $data->tipo_plataforma);
+    $stmt->bindParam(':observaciones', $data->observaciones);
+    $stmt->bindParam(':dependencias', $data->dependencias);
+    $stmt->bindParam(':conexiones', $data->conexiones);
+    $stmt->bindParam(':tipo_red', $data->tipo_red);
+    $stmt->bindParam(':estatus', $data->estatus);
+    $stmt->bindParam(':id', $data->id);
+    
+    $stmt->execute();
+    
+    echo "Actualización exitosa";
+} catch (PDOException $e) {
+    echo "Error al actualizar la fila: " . $e->getMessage();
+}
+
+// Cerrar la conexión a la base de datos
+$db = null;
 ?>

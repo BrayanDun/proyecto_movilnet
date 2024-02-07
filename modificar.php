@@ -145,6 +145,8 @@ th {
                 <th> Conexiones </th>
                 <th> Tipo de red </th>
                 <th> Estatus </th>
+                <th> Creado </th>
+                <th> Modificado </th>
                 <th> Acciones </th>  <!-- Agregada columna de acciones -->
             </tr>
         </thead>
@@ -157,21 +159,55 @@ th {
             while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr id='fila_{$fila['id']}'>";
                 echo "<td>{$fila['id']}</td>";
-                echo "<td>{$fila['nombre']}</td>";
-                echo "<td>{$fila['ip']}</td>";
-                echo "<td>{$fila['tipos']}</td>";
-                echo "<td>{$fila['ubicacion']}</td>";
-                echo "<td>{$fila['so']}</td>";
-                echo "<td>{$fila['servicios']}</td>";
-                echo "<td>{$fila['caracteristicas']}</td>";
-                echo "<td>{$fila['tipo_plataforma']}</td>";
-                echo "<td>{$fila['observaciones']}</td>";
-                echo "<td>{$fila['dependencias']}</td>";
-                echo "<td>{$fila['conexiones']}</td>";
-                echo "<td>{$fila['tipo_red']}</td>";
-                echo "<td>{$fila['estatus']}</td>";
+                echo "<td><input type='text' value='{$fila['nombre']}' ></td>";
+                echo "<td><input type='text' value='{$fila['ip']}'></td>";
+            
+                // Modificar para mostrar el valor actual en el primer <select>
+                echo "<td><select>";
+                echo "<option value='Base de Datos' " . ($fila['tipos'] === 'Base de Datos' ? 'selected' : '') . ">Base de Datos</option>";
+                echo "<option value='Aplicativo' " . ($fila['tipos'] === 'Aplicativo' ? 'selected' : '') . ">Aplicativo</option>";
+                echo "<option value='Respaldo' " . ($fila['tipos'] === 'Respaldo' ? 'selected' : '') . ">Respaldo</option>";
+                echo "<option value='Manejo de Version' " . ($fila['tipos'] === 'Manejo de Version' ? 'selected' : '') . ">Manejo de Version</option>";
+                echo "<option value='Gestión' " . ($fila['tipos'] === 'Gestión' ? 'selected' : '') . ">Gestión</option>";
+                echo "<option value='Balanceo' " . ($fila['tipos'] === 'Balanceo' ? 'selected' : '') . ">Balanceo</option>";
+                echo "<option value='Caché' " . ($fila['tipos'] === 'Caché' ? 'selected' : '') . ">Caché</option>";
+                echo "</select></td>";
+            
+                // Repetir para los demás campos <select>
+                
+                echo "<td><input type='text' value='{$fila['ubicacion']}'></td>";
+                echo "<td><input type='text' value='{$fila['so']}'></td>";
+            
+                echo "<td><select>";
+                echo "<option value='DHCP' " . ($fila['servicios'] === 'DHCP' ? 'selected' : '') . ">DHCP</option>";
+                echo "<option value='WebLogic' " . ($fila['servicios'] === 'WebLogic' ? 'selected' : '') . ">WebLogic</option>";
+                echo "<option value='Correo' " . ($fila['servicios'] === 'Correo' ? 'selected' : '') . ">Correo</option>";
+                echo "<option value='Aplicaciones' " . ($fila['servicios'] === 'Aplicaciones' ? 'selected' : '') . ">Aplicaciones</option>";
+                echo "<option value='Versiones' " . ($fila['servicios'] === 'Versiones' ? 'selected' : '') . ">Versiones</option>";
+                echo "</select></td>";
+            
+                echo "<td><input type='text' value='{$fila['caracteristicas']}'></td>";
+            
+                echo "<td><select>";
+                echo "<option value='Desarrollo' " . ($fila['tipo_plataforma'] === 'Desarrollo' ? 'selected' : '') . ">Desarrollo</option>";
+                echo "<option value='Calidad' " . ($fila['tipo_plataforma'] === 'Calidad' ? 'selected' : '') . ">Calidad</option>";
+                echo "<option value='Producción' " . ($fila['tipo_plataforma'] === 'Producción' ? 'selected' : '') . ">Producción</option>";
+                echo "</select></td>";
+            
+                echo "<td><input type='text' value='{$fila['observaciones']}'></td>";
+                echo "<td><input type='text' value='{$fila['dependencias']}' readonly></td>";
+                echo "<td><input type='text' value='{$fila['conexiones']}' readonly></td>";
+                echo "<td><input type='text' value='{$fila['tipo_red']}'></td>";
+            
+                echo "<td><select>";
+                echo "<option value='Habilitado' " . ($fila['estatus'] === 'Habilitado' ? 'selected' : '') . ">Habilitado</option>";
+                echo "<option value='Inhabilitado' " . ($fila['estatus'] === 'Inhabilitado' ? 'selected' : '') . ">Inhabilitado</option>";
+                echo "</select></td>";
+
+                echo "<td>{$fila['creado_en']}</td>";  // Muestra la hora de creación
+                echo "<td>{$fila['modificado_en']}</td>";  // Muestra la hora de modificación
+
                 echo "<td><button class='modificar' onclick='editarFila({$fila['id']})'>Modificar</button></td>";
-                echo "</tr>";
             }
             $db = null;
             ?>
@@ -179,73 +215,115 @@ th {
     </table>
 
     <script>
-    function editarFila(id) {
-        var fila = document.getElementById('fila_' + id);
-        fila.innerHTML = "<td><input type='text' value='" + fila.cells[0].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[1].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[2].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[3].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[4].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[5].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[6].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[7].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[8].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[9].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[10].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[11].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[12].innerText + "'></td>" +
-                         "<td><input type='text' value='" + fila.cells[13].innerText + "'></td>" +
-                         "<td><button class='guardar' onclick='guardarEdicion(" + id + ")'>Guardar</button></td>";
-    }
+        function editarFila(id) {
+            var fila = document.getElementById('fila_' + id);
 
-    function guardarEdicion(id) {
-        // Obtener los nuevos valores desde los campos de entrada
-        var idNuevo = document.querySelector("#fila_" + id + " td:nth-child(1) input").value;
-        var nombreNuevo = document.querySelector("#fila_" + id + " td:nth-child(2) input").value;
-        var ipNuevo = document.querySelector("#fila_" + id + " td:nth-child(3) input").value;
-        var tiposNuevo = document.querySelector("#fila_" + id + " td:nth-child(4) input").value;
-        var ubicacionNuevo = document.querySelector("#fila_" + id + " td:nth-child(5) input").value;
-        var soNuevo = document.querySelector("#fila_" + id + " td:nth-child(6) input").value;
-        var serviciosNuevo = document.querySelector("#fila_" + id + " td:nth-child(7) input").value;
-        var caracteristicasNuevo = document.querySelector("#fila_" + id + " td:nth-child(8) input").value;
-        var tipoPlataformaNuevo = document.querySelector("#fila_" + id + " td:nth-child(9) input").value;
-        var observacionesNuevo = document.querySelector("#fila_" + id + " td:nth-child(10) input").value;
-        var dependenciasNuevo = document.querySelector("#fila_" + id + " td:nth-child(11) input").value;
-        var conexionesNuevo = document.querySelector("#fila_" + id + " td:nth-child(12) input").value;
-        var tipoRedNuevo = document.querySelector("#fila_" + id + " td:nth-child(13) input").value;
-        var estatusNuevo = document.querySelector("#fila_" + id + " td:nth-child(14) input").value;
-
-        // Enviar los datos al servidor mediante AJAX
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // Manejar la respuesta del servidor si es necesario
-                console.log(this.responseText);
-                location.reload();  // Recargar la página después de la actualización
+            if (!fila) {
+                console.error('Error: No se encontró la fila con el ID ' + 'fila_' + id);
+                return;
             }
-        };
 
-        // Construir la cadena de consulta con todos los campos
-        var queryString = "id=" + idNuevo +
-                          "&nombre=" + nombreNuevo +
-                          "&ip=" + ipNuevo +
-                          "&tipos=" + tiposNuevo +
-                          "&ubicacion=" + ubicacionNuevo +
-                          "&so=" + soNuevo +
-                          "&servicios=" + serviciosNuevo +
-                          "&caracteristicas=" + caracteristicasNuevo +
-                          "&tipo_plataforma=" + tipoPlataformaNuevo +
-                          "&observaciones=" + observacionesNuevo +
-                          "&dependencias=" + dependenciasNuevo +
-                          "&conexiones=" + conexionesNuevo +
-                          "&tipo_red=" + tipoRedNuevo +
-                          "&estatus=" + estatusNuevo;
+            // Hacer los campos editables
+            for (var i = 2; i <= 14; i++) {
+                var elemento = fila.querySelector("td:nth-child(" + i + ") input, td:nth-child(" + i + ") select");
+                elemento.removeAttribute('readonly');
+            }
 
-        // Agregar la cadena de consulta a la URL
-        xmlhttp.open("GET", "guardar_edicion.php?" + queryString, true);
-        xmlhttp.send();
-    }
-</script>
+            // Cambiar el botón "Modificar" a "Guardar"
+            var botonModificar = fila.querySelector('.modificar');
+            botonModificar.innerHTML = 'Guardar';
+            botonModificar.onclick = function() {
+                guardarEdicion(id);
+            };
+        }
+
+        function guardarEdicion(id) {
+            var fila = document.getElementById('fila_' + id);
+
+            if (!fila) {
+                console.error('Error: No se encontró la fila con el ID ' + 'fila_' + id);
+                return;
+            }
+
+            // Obtener los nuevos valores desde los campos de entrada
+            var idNuevo = id;
+            var nombreNuevo = obtenerValor(fila, 2); // Índice ajustado para el nombre
+            var ipNuevo = obtenerValor(fila, 3); // Índice ajustado para la IP
+            var tiposNuevo = obtenerValor(fila, 4, 'select'); // Índice ajustado para los tipos
+            var ubicacionNuevo = obtenerValor(fila, 5); // Índice ajustado para la ubicación
+            var soNuevo = obtenerValor(fila, 6); // Índice ajustado para el SO
+            var serviciosNuevo = obtenerValor(fila, 7, 'select'); // Índice ajustado para los servicios
+            var caracteristicasNuevo = obtenerValor(fila, 8); // Índice ajustado para las características
+            var tipoPlataformaNuevo = obtenerValor(fila, 9, 'select'); // Índice ajustado para la plataforma
+            var observacionesNuevo = obtenerValor(fila, 10); // Índice ajustado para las observaciones
+            var dependenciasNuevo = obtenerValor(fila, 11); // Índice ajustado para las dependencias
+            var conexionesNuevo = obtenerValor(fila, 12); // Índice ajustado para las conexiones
+            var tipoRedNuevo = obtenerValor(fila, 13); // Índice ajustado para el tipo de red
+            var estatusNuevo = obtenerValor(fila, 14, 'select'); // Índice ajustado para el estatus
+
+            // Enviar los datos al servidor mediante AJAX
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    location.reload();
+                }
+            };
+
+            // Construir el objeto de datos para enviar al servidor
+            var data = {
+                id: idNuevo,
+                nombre: nombreNuevo,
+                ip: ipNuevo,
+                tipos: tiposNuevo,
+                ubicacion: ubicacionNuevo,
+                so: soNuevo,
+                servicios: serviciosNuevo,
+                caracteristicas: caracteristicasNuevo,
+                tipo_plataforma: tipoPlataformaNuevo,
+                observaciones: observacionesNuevo,
+                dependencias: dependenciasNuevo,
+                conexiones: conexionesNuevo,
+                tipo_red: tipoRedNuevo,
+                estatus: estatusNuevo
+            };
+
+            // Configurar la solicitud AJAX
+            xmlhttp.open("POST", "guardar_edicion.php", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            // Convertir el objeto de datos a formato JSON y enviarlo
+            xmlhttp.send(JSON.stringify(data));
+
+            // Cambiar el botón "Guardar" a "Modificar" después de guardar
+            var fila = document.getElementById('fila_' + id);
+            var botonModificar = fila.querySelector('.modificar');
+            botonModificar.innerHTML = 'Modificar';
+            botonModificar.onclick = function() {
+                editarFila(id);
+            };
+
+        }
+
+        function obtenerValor(fila, indice, tipo = 'input') {
+            var elemento = fila.querySelector("td:nth-child(" + indice + ") " + tipo);
+
+            if (!elemento) {
+                console.error('Error: No se encontró el elemento ' + tipo + ' en la celda correspondiente.');
+                return '';
+            }
+
+            if (tipo === 'select' && elemento.options && elemento.selectedIndex !== -1) {
+                return elemento.options[elemento.selectedIndex].value;
+            } else if (tipo === 'input') {
+                return elemento.value;
+            }
+
+            console.error('Error: No se pudo obtener el valor del elemento ' + tipo + ' en la celda correspondiente.');
+            return '';
+            
+        }
+    </script>
 </body>
 </html>
 
