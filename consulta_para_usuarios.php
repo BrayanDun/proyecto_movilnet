@@ -61,21 +61,23 @@ button:hover {
 
 
 
+
 table {
     position: absolute;
-    background-color: rgb(252, 248, 248);
+    background-color: rgb(255 255 255);
     margin-top: 50px;
-    width: 100%;  /* Ajuste el ancho de la tabla al 100% para que ocupe todo el contenedor */
-    border-collapse: collapse;  /* Añadido para colapsar los bordes de las celdas */
+    width: 108%;
+    border-collapse: 35px;
+    border-radius: 14px;
 }
 
 th, td {
     border: 2px solid #FF585F;
-    padding: 8px;
+    border-radius: 13px;
+    padding: 7px;
     text-align: left;
     font-size: 0.8rem;
 }
-
 th {
     background-color: #FF585F;
     color: white;
