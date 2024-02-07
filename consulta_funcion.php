@@ -94,7 +94,15 @@ th {
         </form>
     
     <a href="javascript:history.back()" style="text-decoration: none;">
-        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;">
+        <button style="
+            margin: 0px;
+            margin-bottom: -176px;
+            padding: 10px;
+            background-color: #FF585F;
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            position: absolute;">
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
@@ -118,6 +126,8 @@ th {
             <th> Estatus </th>
             <th> Creado </th>
             <th> Modificado </th>
+            <th> Acciones </th>
+
         </tr>
         </thead>
         <tbody>

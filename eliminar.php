@@ -14,12 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $datosServidor = $statementSelect->fetch(PDO::FETCH_ASSOC);
 
     if ($datosServidor) {
-        // Mover a la tabla de servidores
-        $consultaInsert = "INSERT INTO servidores (id, nombre, ip, tipos, ubicacion, so, servicios, caracteristicas, tipo_plataforma, observaciones, dependencias, conexiones, tipo_red, estatus, creado_en, modificado_en) 
-                            VALUES (:id, :nombre, :ip, :tipos, :ubicacion, :so, :servicios, :caracteristicas, :tipo_plataforma, :observaciones, :dependencias, :conexiones, :tipo_red, :estatus, :creado_en, :modificado_en)";
-        $statementInsert = $db->prepare($consultaInsert);
-        $statementInsert->execute($datosServidor);
-
         // Eliminar de la tabla principal
         $consultaDelete = "DELETE FROM desincorporar WHERE id = :id";
         $statementDelete = $db->prepare($consultaDelete);

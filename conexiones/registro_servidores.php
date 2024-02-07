@@ -8,6 +8,27 @@ $password = "postgres";
 // Crea una conexión a la base de datos
 $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
 
+// Obtiene los datos del formulario
+$id = isset($_POST["id"]) ? $_POST["id"] : "";
+$nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
+$ip = isset($_POST["ip"]) ? $_POST["ip"] : "";
+$tipos = isset($_POST["tipos"]) ? $_POST["tipos"] : "";
+$ubicacion = isset($_POST["ubicacion"]) ? $_POST["ubicacion"] : "";
+$so = isset($_POST["so"]) ? $_POST["so"] : "";
+$servicios = isset($_POST["servicios"]) ? $_POST["servicios"] : "";
+$caracteristicas = isset($_POST["caracteristicas"]) ? $_POST["caracteristicas"] : "";
+$tipo_plataforma = isset($_POST["tipo_plataforma"]) ? $_POST["tipo_plataforma"] : "";
+$observaciones = isset($_POST["observaciones"]) ? $_POST["observaciones"] : "";
+$dependencias = isset($_POST["dependencias"]) ? $_POST["dependencias"] : "";
+$conexiones = isset($_POST["conexiones"]) ? $_POST["conexiones"] : "";
+$tipo_red = isset($_POST["tipo_red"]) ? $_POST["tipo_red"] : "";
+$estatus = isset($_POST["estatus"]) ? $_POST["estatus"] : "";
+
+// Verificar si ambos campos están completos
+if (empty($id) || empty($nombre)|| empty($ip)|| empty($tipos)|| empty($ubicacion)|| empty($so)|| empty($servicios)|| empty($caracteristicas)|| empty($tipo_plataforma)|| empty($observaciones)|| empty($dependencias)|| empty($conexiones)|| empty($tipo_red)|| empty($estatus)) {
+    header("Location: error-registro.php?message=Por favor, completa los campos.");
+    exit;
+}
     // Obtener la ID del formulario
     $id = $_POST['id'];
 

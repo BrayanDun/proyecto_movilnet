@@ -14,6 +14,11 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background-image: url('img/logo-movilnet-2023.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center right;
+            
         }
 
         .container {
@@ -52,7 +57,7 @@
         <h2>Error</h2>
         <p><?php echo isset($_GET['message']) ? $_GET['message'] : 'Ha ocurrido un error.'; ?></p>
         <a href="javascript:history.back()" style="text-decoration: none;">
-            <button>
+            <button class="body">
                 <i class="fas fa-arrow-left"></i> Volver al Registro
             </button>
         </a>

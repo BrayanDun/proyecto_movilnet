@@ -72,11 +72,11 @@ th {
 
 .papelera {
     background-color: #FF585F;
-    padding: 6px 6px;
+    padding: 8px 15px;
     position: absolute;
-    margin-left: 124px;
-    margin-top: 74PX;
-    border-radius: 3px;
+    margin-left: 1px;
+    margin-top: 110PX;
+    border-radius: 9px;
     color: white;
     cursor: pointer;
     border-color: whitesmoke;

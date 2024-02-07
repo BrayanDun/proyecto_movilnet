@@ -98,7 +98,7 @@ h1 {
     </div>
 
     <a href="javascript:history.back()" style="text-decoration: none;">
-        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;">
+        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border-radius: 9px; cursor: pointer;position: absolute;">
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
@@ -122,7 +122,8 @@ h1 {
                 <th> Estatus </th>
                 <th> Creado </th>
                 <th> Modificado </th>
-                <th> Acciones </th>  <!-- Agregada columna de acciones -->
+                <th> Acciones </th>
+                <th> Acciones </th>   <!-- Agregada columna de acciones -->
             </tr>
         </thead>
         <tbody>
@@ -151,6 +152,8 @@ h1 {
                 echo "<td>{$fila['modificado_en']}</td>";
                 echo "<td><button class='desincorp' onclick='restaurarServidor({$fila['id']})'>Restaurar</button>
                 </td>";
+                echo "<td><button class='desincorp' onclick='eliminarServidor({$fila['id']})'>Eliminar Permanentemente</button>
+                </td>";
                 echo "</tr>";
             }
             $db = null;
@@ -161,6 +164,27 @@ h1 {
     function restaurarServidor(id) {
         // Realizar la solicitud al servidor para desincorporar el servidor
         fetch(`Restaurar.php?id=${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error de red: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Manejar la respuesta del servidor
+                console.log(data);
+                location.reload();  // Recargar la página después de la desincorporación
+            })
+            .catch(error => {
+                console.error('Error al restaurar el servidor:', error);
+            });
+    }
+</script>
+
+<script>
+    function eliminarServidor(id) {
+        // Realizar la solicitud al servidor para desincorporar el servidor
+        fetch(`eliminar.php?id=${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error de red: ${response.status}`);
