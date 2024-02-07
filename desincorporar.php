@@ -91,7 +91,7 @@ h1 {
 }
 
 </style>
-<h1>Servidores Desincorporados</h1>
+
     <form action="consulta_desincorporados.php">
     <button class='papelera'>Desincorporados</button>
     </form>
