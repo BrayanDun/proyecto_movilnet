@@ -51,7 +51,7 @@ table {
 }
 
 th, td {
-    border: 2px solid #FF585F;
+    border: 1px solid #FF585F;
     border-radius: 6px;
     padding: 7px;
     text-align: left;
