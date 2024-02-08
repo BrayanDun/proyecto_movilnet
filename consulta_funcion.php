@@ -46,7 +46,7 @@ label {
 
 .export {
     position: relative;
-    left: 1000px;
+    left: 1175px;
     margin: 10px; 
     padding: 10px; 
     background-color: #FF585F; 
