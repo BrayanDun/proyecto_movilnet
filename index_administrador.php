@@ -19,10 +19,10 @@ if (!isset($_SESSION["p00"])) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         .pagina-inicio {
-            background-image: url('img/Movilnet-logo_0.png');
+            background-image: url('img/fondo-onda-blanca-suave_52683-55288.avif');
             background-repeat: no-repeat;
-            background-position: 50px;
-            background-size: 1550px;
+            background-position: 47px;
+            background-size: 3000px;
         
         }
 

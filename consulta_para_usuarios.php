@@ -66,17 +66,17 @@ table {
     position: absolute;
     background-color: rgb(255 255 255);
     margin-top: 50px;
-    width: 90%;
+    width: 108%;
     border-collapse: 35px;
-    border-radius: 8px;
+    border-radius: 14px;
 }
 
 th, td {
-    border: 1px solid #FF585F;
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-    font-size: 0.9rem;
+    border: 2px solid #FF585F;
+    border-radius: 13px;
+    padding: 7px;
+    text-align: left;
+    font-size: 0.8rem;
 }
 th {
     background-color: #FF585F;
@@ -100,8 +100,12 @@ th {
             <th> Tipos </th>
             <th> Ubicación </th>
             <th> SO </th>
+            <th> Servicios </th>
             <th> Características </th>
             <th> Tipo de plataforma </th>
+            <th> Observaciones </th>
+            <th> Dependencias </th>
+            <th> Conexiones </th>
             <th> Tipo de red </th>
             <th> Estatus </th>
         </tr>
@@ -137,8 +141,12 @@ if ($stmt->rowCount() > 0) {
     echo "<th>tipos</th>";
     echo "<th>ubicacion</th>";
     echo "<th>so</th>";
+    echo "<th>servicios</th>";
     echo "<th>caracteristicas</th>";
     echo "<th>tipo_plataforma</th>";
+    echo "<th>observaciones</th>";
+    echo "<th>dependencias</th>";
+    echo "<th>conexiones</th>";
     echo "<th>tipo_red</th>";
     echo "<th>estatus</th>";
     echo "</tr>";
@@ -151,8 +159,12 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['tipos'] . "</td>";
         echo "<td>" . $row['ubicacion'] . "</td>";
         echo "<td>" . $row['so'] . "</td>";
+        echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['caracteristicas'] . "</td>";
         echo "<td>" . $row['tipo_plataforma'] . "</td>";
+        echo "<td>" . $row['observaciones'] . "</td>";
+        echo "<td>" . $row['dependencias'] . "</td>";
+        echo "<td>" . $row['conexiones'] . "</td>";
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
         echo "</tr>";
