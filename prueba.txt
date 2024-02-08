@@ -1,0 +1,24 @@
+<label for="" class="text-left"></label>
+              <a class="form-styling" name="dependencias" id="dependencias">
+                <?php
+                  // Conectar a la base de datos
+                  $host = "localhost";
+                  $dbname = "Movilnet";
+                  $username = "postgres";
+                  $password = "postgres";
+                  $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+
+                  // Consultar los nombres de los servidores registrados
+                  $sql = "SELECT nombre FROM servidores";
+                  $stmt = $conn->query($sql);
+                  $result = $stmt->fetchAll();
+
+                  // Mostrar opciones en el campo de selección
+                  foreach ($result as $row) {
+                    echo "<a value='" . $row[''] . "</a>";
+                  }
+
+                  // Cerrar la conexión
+                  $conn = null;
+                ?>
+              </a>
