@@ -97,7 +97,7 @@ th {
 </style>
 <div class="container">
     <form  action="consulta_funcion.php" method="POST">
-        <input class="busq" type="text" name="buscar">
+        <input class="busq" type="text" placeholder="Buscar..." name="buscar">
         <input type="submit" value="" class="boton_busq">
     </form>
     </div>
