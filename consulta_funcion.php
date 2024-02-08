@@ -46,7 +46,7 @@ label {
 
 .export {
     position: relative;
-    left: 1573px;
+    left: 1000px;
     margin: 10px; 
     padding: 10px; 
     background-color: #FF585F; 
@@ -78,17 +78,17 @@ table {
     position: absolute;
     background-color: rgb(255 255 255);
     margin-top: 50px;
-    width: 108%;
+    width: 90%;
     border-collapse: 35px;
-    border-radius: 14px;
+    border-radius: 8px;
 }
 
 th, td {
-    border: 2px solid #FF585F;
+    border: 1px solid #FF585F;
     border-radius: 6px;
-    padding: 7px;
-    text-align: left;
-    font-size: 0.8rem;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
 }
 th {
     background-color: #FF585F;
@@ -116,7 +116,8 @@ th {
             color: white;
             border-radius: 12px;
             cursor: pointer;
-            position: absolute;">
+            position: absolute;
+            border-color: white;">
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
@@ -129,13 +130,6 @@ th {
             <th> IP </th>
             <th> Tipos </th>
             <th> Ubicación </th>
-            <th> SO </th>
-            <th> Servicios </th>
-            <th> Características </th>
-            <th> Tipo de plataforma </th>
-            <th> Observaciones </th>
-            <th> Dependencias </th>
-            <th> Conexiones </th>
             <th> Tipo de red </th>
             <th> Estatus </th>
             <th> Creado </th>
@@ -174,13 +168,7 @@ if ($stmt->rowCount() > 0) {
     echo "<th>IP</th>";
     echo "<th>Tipos</th>";
     echo "<th>Ubicación</th>";
-    echo "<th>SO</th>";
-    echo "<th>Servicios</th>";
-    echo "<th>Características</th>";
-    echo "<th>Tipo de plataforma</th>";
-    echo "<th>Observaciones</th>";
-    echo "<th>Dependencias</th>";
-    echo "<th>Conexiones</th>";
+    
     echo "<th>Tipo de Red</th>";
     echo "<th>Estatus</th>";
     echo "<th>Creado</th>";
@@ -194,13 +182,7 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['ip'] . "</td>";
         echo "<td>" . $row['tipos'] . "</td>";
         echo "<td>" . $row['ubicacion'] . "</td>";
-        echo "<td>" . $row['so'] . "</td>";
-        echo "<td>" . $row['servicios'] . "</td>";
-        echo "<td>" . $row['caracteristicas'] . "</td>";
-        echo "<td>" . $row['tipo_plataforma'] . "</td>";
-        echo "<td>" . $row['observaciones'] . "</td>";
-        echo "<td>" . $row['dependencias'] . "</td>";
-        echo "<td>" . $row['conexiones'] . "</td>";
+       
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
         echo "<td>" . $row['creado_en'] . "</td>";
