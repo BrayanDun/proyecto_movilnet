@@ -19,11 +19,10 @@ body {
 }
 
 .container {
-    position: relative;
-    margin-top: 100px;
-    margin-left: 350px;
+    position: absolute;
+    margin-top: 29px;
+    margin-left: 95px;
 }
-
 label {
     position: absolute;
     margin: -49px;
@@ -33,24 +32,38 @@ label {
     color: #FF585F;
 }
 
-input {
-    width: 250px;
-    padding: 15px;
-    padding-right: 35px;
+.busq {
+    width: 170px;
+    padding: 11px;
+    padding-right: 38px;
+    margin-top: 30px;
     font-size: 1rem;
-    border: 0;
+    border-radius: 5px;
+    border-color: #FF585F;
     outline: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.export {
+    position: relative;
+    left: 1573px;
+    margin: 10px; 
+    padding: 10px; 
+    background-color: #FF585F; 
+    color: white; 
+    border: none; 
+    cursor: pointer;
+}
+
 .boton_busq {
     background-color: #FF585F;
-    padding: 5px 4px;
+    width: 55px;
+    padding: 12px;
     position: absolute;
-    margin-top: 45px;
-    margin-left: -250px;
+    margin-top: 28px;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
     border-color: whitesmoke;
 }
 
@@ -83,16 +96,15 @@ th {
 }
 </style>
 <div class="container">
-    <form action="consulta_funcion.php" method="POST">
-        <label>CONSULTAR SERVIDORES</label>
-        <input type="text" name="buscar">
-        <input type="submit" value="BUSCAR" class="boton_busq">
+    <form  action="consulta_funcion.php" method="POST">
+        <input class="busq" type="text" name="buscar">
+        <input type="submit" value="" class="boton_busq">
     </form>
     </div>
     <!-- Botón de exportación -->
         <form action="exportar.php" method="POST" target="_blank">
-            <input type="hidden" name="exportar" value="1">
-            <input style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border: none; cursor: pointer;" type="submit" value="Exportar a CSV">
+            <input class="export" type="hidden" name="exportar" value="1">
+            <input class="export" type="submit" value="Exportar a CSV">
         </form>
     
     <a href="javascript:history.back()" style="text-decoration: none;">
