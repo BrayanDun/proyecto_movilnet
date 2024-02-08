@@ -44,7 +44,7 @@ button:hover {
 table {
     position: absolute;
     background-color: rgb(255 255 255);
-    margin-top: 50px;
+    margin-top: 65px;
     width: 108%;
     border-collapse: 35px;
     border-radius: 14px;
@@ -52,7 +52,7 @@ table {
 
 th, td {
     border: 2px solid #FF585F;
-    border-radius: 13px;
+    border-radius: 6px;
     padding: 7px;
     text-align: left;
     font-size: 0.8rem;

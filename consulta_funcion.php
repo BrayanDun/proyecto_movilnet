@@ -72,7 +72,7 @@ table {
 
 th, td {
     border: 2px solid #FF585F;
-    border-radius: 13px;
+    border-radius: 6px;
     padding: 7px;
     text-align: left;
     font-size: 0.8rem;

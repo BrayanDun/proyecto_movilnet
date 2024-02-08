@@ -25,7 +25,7 @@ body {
 
 label {
     position: absolute;
-    margin-top: -100px;
+    margin-top: -45px;
     margin-left: 90px;
     font-size: xx-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -100,7 +100,7 @@ button:hover {
 table {
     position: absolute;
     background-color: rgb(255 255 255);
-    margin-top: 50px;
+    margin-top: 20px;
     width: 108%;
     border-collapse: 35px;
     border-radius: 14px;
@@ -108,7 +108,7 @@ table {
 
 th, td {
     border: 2px solid #FF585F;
-    border-radius: 13px;
+    border-radius: 6px;
     padding: 7px;
     text-align: left;
     font-size: 0.8rem;
