@@ -34,39 +34,38 @@ label {
 
 .busq {
     width: 170px;
-    padding: 11px;
+    padding: 10px;
     padding-right: 38px;
-    margin-top: 30px;
+    margin-top: 35px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     border-color: #FF585F;
     outline: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .export {
     position: relative;
     left: 1175px;
-    margin: 10px; 
-    padding: 10px; 
-    background-color: #FF585F; 
-    color: white; 
-    border: none; 
+    top: 51px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #0072ff;
+    color: white;
+    border-radius: 12px;
+    border-color: white;
     cursor: pointer;
 }
-
 .boton_busq {
     background-color: #FF585F;
-    width: 55px;
-    padding: 12px;
+    width: 52px;
+    padding: 10px;
     position: absolute;
-    margin-top: 28px;
+    margin-top: 34px;
     color: white;
     cursor: pointer;
     border-radius: 5px;
     border-color: whitesmoke;
 }
-
 button:hover {
     background-color: darkred;
 }
@@ -94,6 +93,18 @@ th {
     background-color: #FF585F;
     color: white;
 }
+
+.ver-mas {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
+
 </style>
 <div class="container">
     <form  action="consulta_funcion.php" method="POST">
@@ -135,6 +146,7 @@ th {
             <th> Creado </th>
             <th> Modificado </th>
             <th> Acciones </th>
+            <th>Detalles</th>
 
         </tr>
         </thead>
@@ -168,12 +180,13 @@ if ($stmt->rowCount() > 0) {
     echo "<th>IP</th>";
     echo "<th>Tipos</th>";
     echo "<th>Ubicación</th>";
-    
     echo "<th>Tipo de Red</th>";
     echo "<th>Estatus</th>";
     echo "<th>Creado</th>";
     echo "<th>Modificado</th>";
+    echo "<th>detalles</th>";
     echo "</tr>";
+
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
@@ -182,11 +195,11 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['ip'] . "</td>";
         echo "<td>" . $row['tipos'] . "</td>";
         echo "<td>" . $row['ubicacion'] . "</td>";
-       
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
         echo "<td>" . $row['creado_en'] . "</td>";
         echo "<td>" . $row['modificado_en'] . "</td>";
+        echo "<td><button class='ver-mas'>Ver mas..</button></td>";
         echo "</tr>";
     }
 

@@ -13,16 +13,7 @@
 </head>
 
 <a href="javascript:history.back()" style="text-decoration: none;">
-        <button style="   
-          margin-right: -99px;
-          width: 13%;
-          height: 40px;
-          border: none;
-          border-radius: 17px;
-          color: #ffffff;
-          background: #FF585F;
-          cursor: pointer;
-          ">
+        <button class="btn-atras">
         <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>

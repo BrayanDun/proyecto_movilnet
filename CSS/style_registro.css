@@ -281,6 +281,21 @@ li {
     cursor: pointer;
 }
 
+.btn-atras {
+  position: absolute;
+  left: 547px;
+  top: 485px;
+  margin-right: -121px;
+  width: 10%;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  color: #000;
+  background: #e4d7d7;
+  cursor: pointer;
+}
+
+
 /* Animación de botón de registro */
 .btn-animate {
   width: 100%;
