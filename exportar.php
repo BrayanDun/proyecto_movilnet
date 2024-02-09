@@ -27,16 +27,16 @@ if (isset($_POST['exportar'])) {
         // Configuraciones adicionales según tus necesidades
         $pdf->SetFont('times', '', 12);
 
-        // Título de la tabla
+        // Agregar una imagen en la esquina superior derecha del PDF
+        $imagePath = 'img/Movilnet.jpg';
+        $pdf->Image($imagePath, 170, 10, 30);
+
+        // Crear la tabla en el PDF con diseño redondeado y colorido
         $html = '<h2 style="text-align:center; color: #FF585F;">Tabla de Servidores</h2>';
 
-        // Agregar una imagen al PDF (ajusta la ruta según tu estructura de archivos)
-        $imagePath = '';
-        $html .= '<img src="'.$imagePath.'" alt="Imagen" style="width: 50px; border-radius: 6px; margin: 10px ; display: table;">';
-
-        // Crear la tabla en el PDF con diseño colorido
-        $html .= '<table border="2" style="width: 100%; border-collapse: collapse; text-align: center;">';
-        $html .= '<tr style="background-color: #FF585F; color: white;">';
+        // Ajustar el tamaño de la tabla y la posición de la imagen
+        $html .= '<table border="1" style="width: 80%; border-collapse: collapse; text-align: center; border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">';
+        $html .= '<tr style="background-color: #FF585F; color: white; border-bottom: 2px solid #FF585F;">';
         $html .= '<th>ID</th>';
         $html .= '<th>Nombre</th>';
         $html .= '<th>IP</th>';
@@ -73,7 +73,7 @@ if (isset($_POST['exportar'])) {
         $pdf->writeHTML($html, true, false, true, false, '');
 
         // Nombre del archivo PDF
-        $filename = 'Servidores.pdf';
+        $filename = 'exportacion_servidores.pdf';
 
         // Salida del PDF (descarga o visualización según el navegador)
         $pdf->Output($filename, 'D');
@@ -82,3 +82,4 @@ if (isset($_POST['exportar'])) {
     // Llama a la función para exportar el PDF
     exportarPDF();
 }
+?>
