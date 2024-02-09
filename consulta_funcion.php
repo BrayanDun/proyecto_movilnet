@@ -125,7 +125,7 @@ h1{
     <!-- Botón de exportación -->
         <form action="exportar.php" method="POST" target="_blank">
             <input class="export" type="hidden" name="exportar" value="1">
-            <input class="export" type="submit" value="Exportar a CSV">
+            <input class="export" type="submit" value="Exportar">
         </form>
     
     <a href="javascript:history.back()" style="text-decoration: none;">
