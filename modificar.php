@@ -95,6 +95,15 @@ button:hover {
     border-color: whitesmoke;
 }
 
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.808);
+    color: #0c0c0c;
+}
 
 
 table {
@@ -125,11 +134,22 @@ th {
     </div>
     
     <a href="javascript:history.back()" style="text-decoration: none;">
-        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border-radius: 9px; cursor: pointer;">
+        <button style="
+            margin: 0px;
+            margin-bottom: -176px;
+            padding: 10px;
+            background-color: #FF585F;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: absolute;
+            border-color: white;
+            margin-top: -26px;">
+
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
-    
     <table>
         <thead>
             <tr>

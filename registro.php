@@ -18,7 +18,7 @@
     <div class="frame">
       <div class="nav">
         <ul class="links">
-          <li class="signup-active"><a class="boton">Registro</a></li>
+          <li class="signup-active"><a class="boton">Registro de servidores</a></li>
         </ul>
       </div>
       <div class="form-signup">
@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-6">
             <label for="id" class="text-left">ID del servidor</label>
-            <input class="form-styling" type="number" name="id" placeholder="">
+            <input class="form-styling" type="number" min="1" max="100000000" name="id" placeholder="">
           </div>
           <div class="col-6">
             <label for="nombre" class="text-left">Nombre del servidor</label>
@@ -93,14 +93,14 @@
         </div>
           <div class="col-6">
           <label for="tipo_red" class="text-left">Tipo de Red</label>
-            <input class="form-styling" type="text" name="tipo_red" placeholder="">
+            <input class="form-styling_red" type="text" name="tipo_red" placeholder="">
           </div>
         </div>
 
           <div class="row3">
             <div class="col-6">
               <label for="dependencias" class="text-left">Dependencias</label>
-              <select class="form-styling" name="dependencias" id="dependencias">
+              <select class="form-styling_dependencia" name="dependencias" id="dependencias">
                 <?php
                   // Conectar a la base de datos
                   $host = "localhost";
@@ -160,7 +160,7 @@
           </div>
           <div class="col-14">
             <label for="estatus" class="text-left1">Indique el estatus</label>
-            <select class='form-styling' name="estatus" id="estatus">
+            <select class='form-styling_estatus' name="estatus" id="estatus">
               <option value="Habilitado">Habilitado</option>
               <option value="Inhabilitado">Inhabilitado</option>
             </select>

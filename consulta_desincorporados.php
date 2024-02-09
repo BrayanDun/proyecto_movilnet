@@ -99,11 +99,22 @@ h1 {
         <label> Papeleras</label>
     </div>
 
-    <a href="javascript:history.back()" style="text-decoration: none;">
-        <button style="margin: 10px; padding: 10px; background-color: #FF585F; color: white; border-radius: 9px; cursor: pointer;position: absolute;">
+<a href="javascript:history.back()" style="text-decoration: none;">
+        <button style="
+            margin: 0px;
+            margin-bottom: -176px;
+            padding: 10px;
+            background-color: #FF585F;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: absolute;
+            border-color: white;
+            margin-top: 16px;">
+
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
-    </a>
 
     <table>
         <thead>

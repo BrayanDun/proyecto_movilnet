@@ -108,6 +108,12 @@ th {
     cursor: pointer;
     border-color: whitesmoke;
 }
+h1{
+    position: absolute;
+    top: 180px;
+    border-radius: 14px;
+    color: #ffffff;
+}
 
 </style>
 <div class="container">
@@ -171,7 +177,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable error 
 $buscar = isset($_POST['buscar']) ? $_POST['buscar'] : "";
 
 // $SQL_READ = "SELECT * FROM servidores WHERE id LIKE $buscar OR nombre LIKE $buscar OR ip LIKE $buscar";
-$SQL_READ = "SELECT * FROM servidores WHERE  text(id) LIKE :buscar OR nombre LIKE :buscar OR ip LIKE :buscar OR ubicacion LIKE :buscar OR estatus LIKE :buscar";
+$SQL_READ = "SELECT * FROM servidores WHERE  text(id) LIKE :buscar OR nombre LIKE :buscar OR ip LIKE :buscar OR tipos LIKE :buscar OR ubicacion LIKE :buscar OR estatus LIKE :buscar";
 $stmt = $conn->prepare($SQL_READ);
 $buscar = "%" . $buscar . "%";
 $stmt->bindParam(":buscar", $buscar); // Use prepared statements for security
@@ -210,7 +216,7 @@ if ($stmt->rowCount() > 0) {
 
     echo "</table>";
 } else {
-    echo "No se encontraron resultados.";
+    echo "<h1>" . "No se encontraron resultados" . "</h1>";
 }
 ?>
 </body>

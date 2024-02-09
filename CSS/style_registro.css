@@ -26,9 +26,9 @@ body {
 
 /* Marco principal */
 .frame {
-  height: 750px;
+  height: 552px;
   width: 100%;
-  background: linear-gradient( #ff7360, rgba(255, 130, 130, 0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+  background: linear-gradient( #FF585F, rgba(255, 130, 130, 0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
@@ -82,7 +82,7 @@ body {
 
 .text-left1 {
   margin-top: -21px;
-  margin-left: -2px;
+  margin-left: -59px;
   position: absolute;
 }
 
@@ -122,9 +122,9 @@ body {
 }
 
 /* Lista de enlaces */
-li {
-  padding-left: 10px;
-  font-size: 18px;
+li.signup-active {
+  padding-left: 350px;
+  font-size: 25px;
   display: inline;
   text-align: left;
   text-transform: uppercase;
@@ -154,11 +154,9 @@ li {
 }
 
 .signup-active a {
-  cursor: pointer;
   color: #ffffff;
   text-decoration: none;
-  border-bottom: solid 2px #f3f3f3;
-  padding-bottom: 10px;
+
 }
 
 .signup-inactive a {
@@ -225,6 +223,33 @@ li {
   stroke-width: 2px;
 }
 
+.form-styling_dependencia {
+  width: 92%;
+  font-size: 14px;
+  height: 39px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  margin-left: -2px;
+  border: none;
+  border-radius: 10px;
+  color: #0f0f0f;
+  background-color: rgba(255, 255, 255, 0.808);
+}
+
+.form-styling_red {
+  width: 92%;
+  font-size: 14px;
+  height: 39px;
+  margin-bottom: 20px;
+  padding-left: 38px;
+  margin-left: -35px;
+  border: none;
+  border-radius: 10px;
+  color: #0f0f0f;
+  background-color: rgba(255, 255, 255, 0.808);
+}
+
+
 /* Campos de entrada y etiquetas */
 .form-styling {
   width: 92%;
@@ -232,6 +257,20 @@ li {
   height: 39px;
   margin-bottom: 20px;
   padding-left: 20px;
+  border: none;
+  border-radius: 10px;
+  color: #0f0f0f;
+  background-color: rgba(255, 255, 255, 0.808);
+}
+
+.form-styling_estatus {
+  width: 92%;
+  font-size: 14px;
+  height: 39px;
+  margin-bottom: 20px;
+  margin-left: -58px;
+  padding-left: 15px;
+  margin-top: 6px;
   border: none;
   border-radius: 10px;
   color: #0f0f0f;
@@ -348,5 +387,10 @@ li {
   box-shadow: 0 0 5px #9da8b1;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
 
 

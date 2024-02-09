@@ -108,6 +108,12 @@ th {
     cursor: pointer;
     border-color: whitesmoke;
 }
+h1{
+    position: absolute;
+    top: 180px;
+    border-radius: 14px;
+    color: #ffffff;
+}
 
 </style>
 <div class="container">
@@ -206,7 +212,7 @@ if ($stmt->rowCount() > 0) {
 
     echo "</table>";
 } else {
-    echo "No se encontraron resultados.";
+    echo "<h1>" . "No se encontraron resultados" . "</h1>";
 }
 ?>
 </body>
