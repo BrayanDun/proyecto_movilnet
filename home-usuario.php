@@ -51,7 +51,7 @@ if (!isset($_SESSION["p00"])) {
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="./home-usuario.php">
+                        <a href="home-usuario.php">
                         <i class='bx bx-home icon' ></i>
                         <span class="text nav-text">Inicio</span>
                         </a>

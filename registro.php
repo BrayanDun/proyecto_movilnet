@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -11,11 +12,6 @@
   <link rel="stylesheet" href="CSS\style_registro.css">
 </head>
 
-<a href="javascript:history.back()" style="text-decoration: none;">
-        <button class="btn-atras">
-        <i class="fas fa-arrow-left"></i> Atrás
-        </button>
-    </a>
 
 <body>
   <div class="container">
@@ -173,6 +169,20 @@
         </div>
         <div class="reg_confirm">
         <input type="submit" value="Registrar servidor" class="btn-signup" id="submitBtn">
+        <input type="button" value="Atrás" class="btn-atras" onclick="window.location.href='consulta_funcion.php'" 
+        style="position: relative;
+    left: -105px;
+    top: -40px;
+    width: 102%;
+    max-width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e4d7d7;
+    color: #000;
+    cursor: pointer;">
+
+    </a>
         </div>
 
       </div>

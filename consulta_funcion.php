@@ -36,13 +36,14 @@ label {
     width: 170px;
     padding: 10px;
     padding-right: 38px;
-    margin-top: 35px;
+    margin-top: 28px;
     font-size: 1rem;
     border-radius: 8px;
     border-color: #FF585F;
     outline: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .export {
     position: relative;
     left: 1175px;
@@ -51,21 +52,24 @@ label {
     padding: 10px;
     background-color: #0072ff;
     color: white;
+    border: none;
     border-radius: 12px;
     border-color: white;
     cursor: pointer;
 }
+
 .boton_busq {
     background-color: #FF585F;
     width: 52px;
     padding: 10px;
     position: absolute;
-    margin-top: 34px;
+    margin-top: 26px;
     color: white;
     cursor: pointer;
     border-radius: 5px;
     border-color: whitesmoke;
 }
+
 button:hover {
     background-color: darkred;
 }
@@ -125,6 +129,7 @@ th {
             padding: 10px;
             background-color: #FF585F;
             color: white;
+            border: none;
             border-radius: 12px;
             cursor: pointer;
             position: absolute;
@@ -199,7 +204,7 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['estatus'] . "</td>";
         echo "<td>" . $row['creado_en'] . "</td>";
         echo "<td>" . $row['modificado_en'] . "</td>";
-        echo "<td><button class='ver-mas'>Ver mas..</button></td>";
+        echo "<td><button class='ver-mas' >Ver mas..</button></td>";
         echo "</tr>";
     }
 

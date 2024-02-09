@@ -17,8 +17,24 @@ if (!isset($_SESSION["p00"])) {
     <title>Inicio</title>
     <link rel="stylesheet" href="CSS\style_inicio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .pagina-inicio {
+            background-image: url('img/Movilnet-logo_0.png');
+            background-repeat: no-repeat;
+            background-position: 50px;
+            background-size: 1550px;
+        
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: 100% 100%;
+            }
+        }
+    </style>
+
 </head>
-<body>
+<body class="pagina-inicio">
     <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -38,7 +54,7 @@ if (!isset($_SESSION["p00"])) {
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="./index_usuario.php">
+                        <a href="home-usuario.php">
                         <i class='bx bx-home icon' ></i>
                         <span class="text nav-text">Inicio</span>
                         </a>

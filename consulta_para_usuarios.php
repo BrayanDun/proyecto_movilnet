@@ -1,4 +1,5 @@
-<?php ob_start(); ?>
+<?php ob_start();?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,40 +19,54 @@ body {
 }
 
 .container {
-    position: relative;
-    margin-top: 100px;
-    margin-left: 350px;
+    position: absolute;
+    margin-top: 29px;
+    margin-left: 95px;
 }
-
 label {
     position: absolute;
     margin: -49px;
-    margin-left: 55px;
+    margin-left: 10px;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
 
-input {
-    width: 350px;
-    padding: 15px;
-    padding-right: 35px;
+.busq {
+    width: 170px;
+    padding: 10px;
+    padding-right: 38px;
+    margin-top: 28px;
     font-size: 1rem;
-
-    border: 0;
+    border-radius: 8px;
+    border-color: #FF585F;
     outline: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.export {
+    position: relative;
+    left: 1175px;
+    top: 51px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    border-color: white;
+    cursor: pointer;
+}
+
 .boton_busq {
     background-color: #FF585F;
-    padding: 5px 4px;
+    width: 52px;
+    padding: 10px;
     position: absolute;
-    margin-top: 45px;
-    margin-left: -350px;
-
+    margin-top: 26px;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
     border-color: whitesmoke;
 }
 
@@ -65,7 +80,7 @@ button:hover {
 table {
     position: absolute;
     background-color: rgb(255 255 255);
-    margin-top: 50px;
+    margin-top: 110px;
     width: 90%;
     border-collapse: 35px;
     border-radius: 8px;
@@ -82,14 +97,42 @@ th {
     background-color: #FF585F;
     color: white;
 }
+
+.ver-mas {
+    background-color: #FF585F;
+    padding: 6px 6px;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    border-color: whitesmoke;
+}
+
 </style>
 <div class="container">
-    <form action="consulta_para_usuarios.php" method="POST">
-        <label>CONSULTAR SERVIDORES</label>
-        <input type="text" name="buscar">
-        <input type="submit" value="BUSCAR" class="boton_busq">
+    <form  action="consulta_funcion.php" method="POST">
+        <input class="busq" type="text" placeholder="Buscar..." name="buscar">
+        <input type="submit" value="" class="boton_busq">
     </form>
     </div>
+
+    
+    <a href="javascript:history.back()" style="text-decoration: none;">
+        <button style="
+    margin: 0px;
+    margin-top: 58px;
+    padding: 10px;
+    background-color: #FF585F;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    position: absolute;
+    border-color: white;">
+            <i class="fas fa-arrow-left"></i> Atrás
+        </button>
+    </a>
     
     <table>
         <thead>
@@ -99,11 +142,13 @@ th {
             <th> IP </th>
             <th> Tipos </th>
             <th> Ubicación </th>
-            <th> SO </th>
-            <th> Características </th>
-            <th> Tipo de plataforma </th>
             <th> Tipo de red </th>
             <th> Estatus </th>
+            <th> Creado </th>
+            <th> Modificado </th>
+            <th> Acciones </th>
+            <th>Detalles</th>
+
         </tr>
         </thead>
         <tbody>
@@ -131,17 +176,18 @@ $stmt->execute();
 if ($stmt->rowCount() > 0) {
     echo "<table>";
     echo "<tr>";
-    echo "<th>id</th>";
-    echo "<th>nombre</th>";
-    echo "<th>ip</th>";
-    echo "<th>tipos</th>";
-    echo "<th>ubicacion</th>";
-    echo "<th>so</th>";
-    echo "<th>caracteristicas</th>";
-    echo "<th>tipo_plataforma</th>";
-    echo "<th>tipo_red</th>";
-    echo "<th>estatus</th>";
+    echo "<th>ID</th>";
+    echo "<th>Nombre</th>";
+    echo "<th>IP</th>";
+    echo "<th>Tipos</th>";
+    echo "<th>Ubicación</th>";
+    echo "<th>Tipo de Red</th>";
+    echo "<th>Estatus</th>";
+    echo "<th>Creado</th>";
+    echo "<th>Modificado</th>";
+    echo "<th>detalles</th>";
     echo "</tr>";
+
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
@@ -150,11 +196,11 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['ip'] . "</td>";
         echo "<td>" . $row['tipos'] . "</td>";
         echo "<td>" . $row['ubicacion'] . "</td>";
-        echo "<td>" . $row['so'] . "</td>";
-        echo "<td>" . $row['caracteristicas'] . "</td>";
-        echo "<td>" . $row['tipo_plataforma'] . "</td>";
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
+        echo "<td>" . $row['creado_en'] . "</td>";
+        echo "<td>" . $row['modificado_en'] . "</td>";
+        echo "<td><button class='ver-mas' >Ver mas..</button></td>";
         echo "</tr>";
     }
 
