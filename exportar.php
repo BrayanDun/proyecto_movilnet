@@ -27,9 +27,16 @@ if (isset($_POST['exportar'])) {
         // Configuraciones adicionales según tus necesidades
         $pdf->SetFont('times', '', 12);
 
-        // Crear la tabla en el PDF
-        $html = '<table border="1">';
-        $html .= '<tr>';
+        // Título de la tabla
+        $html = '<h2 style="text-align:center; color: #FF585F;">Tabla de Servidores</h2>';
+
+        // Agregar una imagen al PDF (ajusta la ruta según tu estructura de archivos)
+        $imagePath = '';
+        $html .= '<img src="'.$imagePath.'" alt="Imagen" style="width: 50px; border-radius: 6px; margin: 10px ; display: table;">';
+
+        // Crear la tabla en el PDF con diseño colorido
+        $html .= '<table border="2" style="width: 100%; border-collapse: collapse; text-align: center;">';
+        $html .= '<tr style="background-color: #FF585F; color: white;">';
         $html .= '<th>ID</th>';
         $html .= '<th>Nombre</th>';
         $html .= '<th>IP</th>';
@@ -41,9 +48,10 @@ if (isset($_POST['exportar'])) {
         $html .= '<th>Modificado</th>';
         $html .= '</tr>';
 
-        // Agregar datos a la tabla
+        // Agregar datos a la tabla con colores alternados
+        $rowColor = '#F9F9F9'; // Color de fondo inicial
         foreach ($result as $row) {
-            $html .= '<tr>';
+            $html .= '<tr style="background-color: ' . $rowColor . ';">';
             $html .= '<td>' . $row['id'] . '</td>';
             $html .= '<td>' . $row['nombre'] . '</td>';
             $html .= '<td>' . $row['ip'] . '</td>';
@@ -54,6 +62,9 @@ if (isset($_POST['exportar'])) {
             $html .= '<td>' . $row['creado_en'] . '</td>';
             $html .= '<td>' . $row['modificado_en'] . '</td>';
             $html .= '</tr>';
+
+            // Cambiar el color de fondo para la siguiente fila
+            $rowColor = ($rowColor === '#F9F9F9') ? '#FFFFFF' : '#F9F9F9';
         }
 
         $html .= '</table>';
@@ -62,7 +73,7 @@ if (isset($_POST['exportar'])) {
         $pdf->writeHTML($html, true, false, true, false, '');
 
         // Nombre del archivo PDF
-        $filename = 'exportacion_servidores.pdf';
+        $filename = 'Servidores.pdf';
 
         // Salida del PDF (descarga o visualización según el navegador)
         $pdf->Output($filename, 'D');
@@ -71,4 +82,3 @@ if (isset($_POST['exportar'])) {
     // Llama a la función para exportar el PDF
     exportarPDF();
 }
-?>
