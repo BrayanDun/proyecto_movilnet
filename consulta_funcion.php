@@ -81,13 +81,11 @@ button:hover {
 }
 
 
-
-
 table {
     position: relative;
     left: 10%;
     top: 10%;
-    transform: translate(-11.5%, -14%);
+    transform: translate(-11.5%, -18%);
     background-color: rgb(255 255 255);
     margin-top: 50px;
     width: 96%;
@@ -98,10 +96,11 @@ table {
 th, td {
     border: 1px solid #FF585F;
     border-radius: 6px;
-    padding: 10px;
+    padding: 9px;
     text-align: center;
     font-size: 0.9rem;
 }
+
 th {
     background-color: #FF585F;
     color: white;
