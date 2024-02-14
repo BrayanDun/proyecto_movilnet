@@ -73,7 +73,7 @@ registrarEnHistorial("Inicio sesión", "Inicio");
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="img\logo-movilnet2.PNG" alt="logo">
+                    <img src="img\images.png" alt="logo">
                 </span>
                 <div class="text header-text">
                     <span class="name"> Movilnet</span>

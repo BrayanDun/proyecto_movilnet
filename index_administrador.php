@@ -38,10 +38,9 @@ if (!isset($_SESSION["p00"])) {
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="img\logo-movilnet2.PNG" alt="logo">
+                    <img src="img\images.png" alt="logo">
                 </span>
                 <div class="text header-text">
-                    <span class="name"> Movilnet</span>
                 </div>
             </div>
 
@@ -53,7 +52,7 @@ if (!isset($_SESSION["p00"])) {
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="home.php">
-                        <i class='bx bx-home icon' ></i>
+                        <img src="iconos\home-regular-24.png"/>
                         <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
@@ -61,35 +60,35 @@ if (!isset($_SESSION["p00"])) {
                     
                     <li class="nav-link">
                         <a href="consulta_funcion.php">
-                        <i class='bx bx-search icon'></i>
+                        <img src="iconos\search-alt-2-regular-24.png"/>
                         <span class="text nav-text">Consultar</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="registro.php">
-                        <i class='bx bx-message-square-add icon'></i>
+                        <img src="iconos\message-add-solid-24.png"/>
                         <span class="text nav-text">Registrar</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="modificar.php">
-                        <i class='bx bx-edit icon'></i>
+                        <img src="iconos\edit-regular-24.png"/>
                         <span class="text nav-text">Modificar</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="desincorporar.php">
-                        <i class='bx bxs-folder-minus icon' ></i>
+                        <img src="iconos\folder-minus-solid-24.png"/>
                         <span class="text nav-text">Desincorporar</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="cerrar_sesion_administrador.php">
-                        <i class='bx bx-log-out icon'></i>
+                        <img src="iconos\exit-regular-24.png"/>
                         <span class="text nav-text">Salir</span>
                         </a>
                     </li>
@@ -110,3 +109,4 @@ if (!isset($_SESSION["p00"])) {
     <script src="script_inicio.js"></script>
 </body>
 </html>
+
