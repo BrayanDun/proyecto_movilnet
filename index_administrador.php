@@ -87,6 +87,13 @@ if (!isset($_SESSION["p00"])) {
                     </li>
 
                     <li class="nav-link">
+                        <a href="desincorporar.php">
+                        <img src="iconos\history-regular-24.png"/>
+                        <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
                         <a href="cerrar_sesion_administrador.php">
                         <img src="iconos\exit-regular-24.png"/>
                         <span class="text nav-text">Salir</span>
