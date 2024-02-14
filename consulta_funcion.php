@@ -87,7 +87,7 @@ table {
     top: 10%;
     transform: translate(-11.5%, -18%);
     background-color: rgb(255 255 255);
-    margin-top: 50px;
+    margin-top: 85px;
     width: 96%;
     border-collapse: 35px;
     border-radius: 8px;
