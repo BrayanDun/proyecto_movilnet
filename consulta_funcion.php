@@ -74,6 +74,9 @@ label {
     cursor: pointer;
     border-radius: 5px;
     border-color: whitesmoke;
+    background-image: url(iconos/search-alt-2-regular-24.png);
+    background-repeat: no-repeat;
+    background-position: 12px 10px;
 }
 
 button:hover {

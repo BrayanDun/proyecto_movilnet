@@ -97,6 +97,7 @@ body.dark
     justify-content: center;
     min-width: 60px;
     font-size: 20px;
+    color: var(--text-color);
 }
 .sidebar li .text
 {
