@@ -8,6 +8,12 @@ $password = "postgres";
 // Crea una conexión a la base de datos
 $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
 
+// Verificar campos incompletos
+if (empty($_POST['P00']) || empty($_POST['Cedula']) || empty($_POST['Nombre']) || empty($_POST['Apellido']) || empty($_POST['Correo']) || empty($_POST['Cargo']) || empty($_POST['Coordinacion']) || empty($_POST['Contraseña'])) {
+    header("Location: error.php?message=Por favor, completa todos los campos.");
+    exit;
+}
+
 // Obtener la ID del formulario
 $p00 = $_POST['P00'];
 

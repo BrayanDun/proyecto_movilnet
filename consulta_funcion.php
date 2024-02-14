@@ -45,17 +45,23 @@ label {
 }
 
 .export {
-    position: relative;
-    left: 1175px;
-    top: 51px;
-    margin: 10px;
-    padding: 10px;
-    background-color: #0072ff;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    border-color: white;
-    cursor: pointer;
+  position: relative;
+  left: 90%;
+  top: 70px;
+  transform: translate(-50%, -50%);
+  margin: 10px;
+  padding: 10px;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  border-color: white;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    /* Ajustar las propiedades para pantallas pequeñas */
+    width: 80%;
+  }
 }
 
 .boton_busq {
@@ -75,13 +81,14 @@ button:hover {
 }
 
 
-
-
 table {
-    position: absolute;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    transform: translate(-11.5%, -18%);
     background-color: rgb(255 255 255);
     margin-top: 50px;
-    width: 90%;
+    width: 96%;
     border-collapse: 35px;
     border-radius: 8px;
 }
@@ -89,13 +96,19 @@ table {
 th, td {
     border: 1px solid #FF585F;
     border-radius: 6px;
-    padding: 10px;
+    padding: 9px;
     text-align: center;
     font-size: 0.9rem;
 }
+
 th {
     background-color: #FF585F;
     color: white;
+
+    @media (max-width: 768px) {
+    /* Ajustar las propiedades para pantallas pequeñas */
+    width: 80%;
+  }
 }
 
 .ver-mas {
@@ -125,7 +138,7 @@ h1{
     <!-- Botón de exportación -->
         <form action="exportar.php" method="POST" target="_blank">
             <input class="export" type="hidden" name="exportar" value="1">
-            <input class="export" type="submit" value="Exportar a CSV">
+            <input class="export" type="submit" value="Exportar a PDF">
         </form>
     
     <a href="javascript:history.back()" style="text-decoration: none;">
@@ -144,25 +157,7 @@ h1{
         </button>
     </a>
     
-    <table>
-        <thead>
-        <tr>
-            <th> ID </th>
-            <th> Nombre </th>
-            <th> IP </th>
-            <th> Tipos </th>
-            <th> Ubicación </th>
-            <th> Tipo de red </th>
-            <th> Estatus </th>
-            <th> Creado </th>
-            <th> Modificado </th>
-            <th> Acciones </th>
-            <th>Detalles</th>
-
-        </tr>
-        </thead>
-        <tbody>
-
+    
 <?php
 // Configuraciones de la base de datos
 $host = "localhost";

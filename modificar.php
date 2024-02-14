@@ -112,7 +112,7 @@ table {
     margin-top: 20px;
     width: 108%;
     border-collapse: 35px;
-    border-radius: 14px;
+    border-radius: 6px;
 }
 
 th, td {

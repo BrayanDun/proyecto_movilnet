@@ -5,7 +5,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Consulta de servidores</title>
+    <title>Papelera</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://kit.fontawesome.com/b408879b64.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -39,21 +39,24 @@ button:hover {
 }
 
 
-
 table {
-    position: absolute;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    transform: translate(-11.5%, -5%);
     background-color: rgb(255 255 255);
-    margin-top: 65px;
-    width: 108%;
+    margin-top: 50px;
+    width: 96%;
     border-collapse: 35px;
-    border-radius: 14px;
+    border-radius: 8px;
 }
+
 
 th, td {
     border: 2px solid #FF585F;
     border-radius: 6px;
     padding: 7px;
-    text-align: left;
+    text-align: center;
     font-size: 0.8rem;
 }
 th {
@@ -124,11 +127,8 @@ h1 {
                 <th> IP </th>
                 <th> Tipos </th>
                 <th> Ubicación </th>
-                <th> SO </th>
                 <th> Servicios </th>
-                <th> Características </th>
                 <th> Tipo de plataforma </th>
-                <th> Observaciones </th>
                 <th> Dependencias </th>
                 <th> Conexiones </th>
                 <th> Tipo de red </th>
@@ -152,11 +152,8 @@ h1 {
                 echo "<td>{$fila['ip']}</td>";
                 echo "<td>{$fila['tipos']}</td>";
                 echo "<td>{$fila['ubicacion']}</td>";
-                echo "<td>{$fila['so']}</td>";
                 echo "<td>{$fila['servicios']}</td>";
-                echo "<td>{$fila['caracteristicas']}</td>";
                 echo "<td>{$fila['tipo_plataforma']}</td>";
-                echo "<td>{$fila['observaciones']}</td>";
                 echo "<td>{$fila['dependencias']}</td>";
                 echo "<td>{$fila['conexiones']}</td>";
                 echo "<td>{$fila['tipo_red']}</td>";
