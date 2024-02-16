@@ -231,7 +231,6 @@ if ($stmt->rowCount() > 0) {
     echo "<th>Tipo de plataforma</th>";
     echo "<th>Tipo de Red</th>";
     echo "<th>Estatus</th>";
-    echo "<th>Modificado</th>";
     echo "<th>detalles</th>";
     echo "</tr>";
 
@@ -247,7 +246,6 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
-        echo "<td>" . $row['modificado_en'] . "</td>";
         echo "<td><button class='ver-mas' >Ver mas..</button></td>";
         echo "</tr>";
     }
