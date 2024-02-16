@@ -87,7 +87,7 @@ if (!isset($_SESSION["p00"])) {
                     </li>
 
                     <li class="nav-link">
-                        <a href="desincorporar.php">
+                        <a href="historial.php">
                         <img src="iconos\history-regular-24.png"/>
                         <span class="text nav-text">Historial</span>
                         </a>

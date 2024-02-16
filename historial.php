@@ -50,9 +50,31 @@ $historial = obtenerHistorial($db);
         th {
             background-color: #f2f2f2;
         }
+
     </style>
 </head>
 <body>
+
+    <div>
+    <a href="javascript:history.back()" style="text-decoration: none;">
+        <button style="
+            margin: 20px;
+            margin-bottom: 83px;
+            padding: 20px;
+            padding-right: 25px;
+            text-align: center;
+            background-color: #FF585F;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: absolute;
+            margin-left: -500px;
+            border-color: white;
+            <i class="fas fa-arrow-left"></i> Atrás
+        </button>
+    </a>
+    </div>
 
     <h1>Historial de Actividades</h1>
 
