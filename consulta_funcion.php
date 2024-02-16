@@ -87,7 +87,7 @@ button:hover {
 table {
     position: relative;
     left: 10%;
-    top: 10%;
+    top: 0%;
     transform: translate(-11.5%, -18%);
     background-color: rgb(255 255 255);
     margin-top: 85px;
@@ -160,7 +160,45 @@ h1{
         </button>
     </a>
     
+    <a href="graficas_tipos.php" style="text-decoration: none;">
+        <button style="
+           position: relative;
+            left: 80%;
+            top: 8px;
+            transform: translate(-48%, -45%);
+            margin: 10px;
+            padding: 10px;
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            border-color: white;
+            cursor: pointer;
+           ">
+            <i class="#"></i> Graficas Tipos
+        </button>
+    </a>
     
+    <a href="graficas_estatus.php" style="text-decoration: none;">
+        <button style="
+           position: relative;
+            left: 60%;
+            top: 8px;
+            transform: translate(-65%, -45%);
+            margin: 10px;
+            padding: 10px;
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            border-color: white;
+            cursor: pointer;
+           ">
+            <i class="#"></i> Graficas Estatus
+        </button>
+    </a>
+
+
 <?php
 // Configuraciones de la base de datos
 $host = "localhost";
@@ -188,10 +226,11 @@ if ($stmt->rowCount() > 0) {
     echo "<th>Nombre</th>";
     echo "<th>IP</th>";
     echo "<th>Tipos</th>";
+    echo "<th>Servicios</th>";
     echo "<th>Ubicación</th>";
+    echo "<th>Tipo de plataforma</th>";
     echo "<th>Tipo de Red</th>";
     echo "<th>Estatus</th>";
-    echo "<th>Creado</th>";
     echo "<th>Modificado</th>";
     echo "<th>detalles</th>";
     echo "</tr>";
@@ -204,9 +243,10 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['ip'] . "</td>";
         echo "<td>" . $row['tipos'] . "</td>";
         echo "<td>" . $row['ubicacion'] . "</td>";
+        echo "<td>" . $row['tipo_plataforma'] . "</td>";
         echo "<td>" . $row['tipo_red'] . "</td>";
+        echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
-        echo "<td>" . $row['creado_en'] . "</td>";
         echo "<td>" . $row['modificado_en'] . "</td>";
         echo "<td><button class='ver-mas' >Ver mas..</button></td>";
         echo "</tr>";
