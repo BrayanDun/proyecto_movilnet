@@ -1,0 +1,62 @@
+    <?php ob_start(); ?>
+    <?php 
+    $host = "localhost";
+    $dbname = "Movilnet";
+    $username = "postgres";
+    $password = "postgres";
+
+    // Crea una conexión a la base de datos
+    $conn = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Fetch the results of the PDO query into an array
+    $SQL_READ = "SELECT estatus, COUNT(*) as count FROM servidores GROUP BY estatus";
+    $stmt = $conn->prepare($SQL_READ);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
+    <html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+    <?php
+        foreach ($results as $row) {
+            echo "['".$row['estatus']."', ".$row['count']."],";
+        }
+    ?>
+            ]);
+
+            var options = {
+            title: 'Grafica de estatus',
+            is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+        </script>
+    </head>
+    <body>
+            <div id="piechart_3d" 
+            style="
+            position: relative;
+            left: 100px;
+            top: 50px;
+            width: 1100px;
+            height: 630px;"></div>
+    </body>
+    </html>
+
+    <?php $contents = ob_get_clean(); ?>
+
+    <?php 
+
+    require("./index_administrador.php");
+
+    ?>
