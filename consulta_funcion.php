@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/b408879b64.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<body>
 <style>
 body {
     display: flex;
@@ -128,7 +129,67 @@ h1{
     position: absolute;
     top: 180px;
     border-radius: 14px;
-    color: #ffffff;
+    color: black;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+
+.modal__container{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition:var(--transition);
+}
+.modal__title{
+    font-size: 2.5rem;
+}
+
+.modal__close{
+    text-decoration: none;
+    color: #fff;
+    background-color: #F26250;
+    padding: 1em 3em;
+    border: 1px solid ;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal__close:hover{
+    color: #F26250;
+    background-color: #fff;
 }
 
 </style>
@@ -160,6 +221,8 @@ h1{
         </button>
     </a>
     
+
+
     
 <?php
 // Configuraciones de la base de datos
@@ -208,7 +271,7 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['estatus'] . "</td>";
         echo "<td>" . $row['creado_en'] . "</td>";
         echo "<td>" . $row['modificado_en'] . "</td>";
-        echo "<td><button class='ver-mas' >Ver mas..</button></td>";
+        echo "<td><button class='ver-mas'>Ver mas..</button></td>";
         echo "</tr>";
     }
 
@@ -217,6 +280,16 @@ if ($stmt->rowCount() > 0) {
     echo "<h1>" . "No se encontraron resultados" . "</h1>";
 }
 ?>
+
+<section class="modal">
+        <div class="modal__container">
+            <h2 class="modal__title">Detalles del servidor</h2>
+            <p> DATOS </p>
+            <a href="" class="modal__close"> CERRAR </a>
+        </div>
+    </section>
+
+    <script src="js/detalles.js"></script>
 </body>
 
 </html>
