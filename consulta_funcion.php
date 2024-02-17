@@ -295,7 +295,6 @@ if ($stmt->rowCount() > 0) {
     echo "<th>detalles</th>";
     echo "</tr>";
 
-
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
@@ -307,33 +306,28 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
-        echo "<td><button class='ver-mas' >Ver mas..</button></td>";
+        echo "<td><button class='ver-mas' data-id='" . $row['id'] . "'>Ver mas..</button></td>";
         echo "</tr>";
     }
 
     echo "</table>";
 } else {
-    echo "<h1>" . "No se encontraron resultados" . "</h1>";
+    echo "<h1>No se encontraron resultados</h1>";
 }
 ?>
 
-<section class="modal">
-        <div class="modal__container">
-            <h2 class="modal__title">Detalles del servidor</h2>
-            <p> DATOS </p>
-            <a href="" class="modal__close"> CERRAR </a>
-        </div>
-    </section>
+<section class="modal" id="modal">
+    <div class="modal__container">
+        <h2 class="modal__title">Detalles del servidor</h2>
+        <p id="detalleDatos">DATOS</p>
+        <a href="javascript:void(0)" class="modal__close" onclick="cerrarModal()">CERRAR</a>
+    </div>
+</section>
 
-    <script src="js/detalles.js"></script>
+<script src="js/detalles.js"></script>
 </body>
-
 </html>
 
 <?php $contents = ob_get_clean(); ?>
 
-<?php 
-
-require("./index_administrador.php");
-
-?>
+<?php require("./index_administrador.php"); ?>
