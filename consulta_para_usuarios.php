@@ -74,7 +74,7 @@ label {
     cursor: pointer;
     border-radius: 5px;
     border-color: whitesmoke;
-    background-image: url(iconos/search-alt-2-regular-24.png);
+    background-image: url(iconos/search-regular-24.png);
     background-repeat: no-repeat;
     background-position: 12px 10px;
 }
@@ -163,7 +163,7 @@ h1{
     <a href="graficas_tipos_usuarios.php" style="text-decoration: none;">
         <button style="
            position: relative;
-            left: 80%;
+            left: 76%;
             top: 8px;
             transform: translate(-48%, -45%);
             margin: 10px;
@@ -182,7 +182,7 @@ h1{
     <a href="graficas_estatus_usuarios.php" style="text-decoration: none;">
         <button style="
            position: relative;
-            left: 60%;
+            left: 52%;
             top: 8px;
             transform: translate(-65%, -45%);
             margin: 10px;

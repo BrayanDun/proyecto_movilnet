@@ -41,6 +41,8 @@ if (!isset($_SESSION["p00"])) {
                     <img src="img\images.png" alt="logo">
                 </span>
                 <div class="text header-text">
+                    <span class="name"> Bienvenido</span>
+                    <h5>Administrador(a)</h5>
                 </div>
             </div>
 

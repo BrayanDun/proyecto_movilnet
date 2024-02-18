@@ -37,10 +37,11 @@ if (!isset($_SESSION["p00"])) {
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="img\logo-movilnet2.PNG" alt="logo">
+                <img src="img\images.png" alt="logo">
                 </span>
                 <div class="text header-text">
-                    <span class="name"> Movilnet</span>
+                    <span class="name"> Bienvenido</span>
+                    <h5>Usuario(a)</h5>
                 </div>
             </div>
 
@@ -52,22 +53,21 @@ if (!isset($_SESSION["p00"])) {
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="home-usuario.php">
-                        <i class='bx bx-home icon' ></i>
+                        <img src="iconos\home-regular-24.png"/>
                         <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
-
                     
                     <li class="nav-link">
                         <a href="consulta_para_usuarios.php">
-                        <i class='bx bx-search icon'></i>
+                        <img src="iconos\search-alt-2-regular-24.png"/>
                         <span class="text nav-text">Consultar</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="cerrar_sesion.php">
-                        <i class='bx bx-log-out icon'></i>
+                        <img src="iconos\exit-regular-24.png"/>
                         <span class="text nav-text">Salir</span>
                         </a>
                     </li>
