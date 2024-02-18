@@ -128,8 +128,76 @@ h1{
     position: absolute;
     top: 180px;
     border-radius: 14px;
-    color: #ffffff;
+    color: black;
 }
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+
+.modal__container{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition:var(--transition);
+}
+.modal__title{
+    font-size: 2.5rem;
+}
+
+.modal__close{
+    text-decoration: none;
+    color: #fff;
+    background-color: #F26250;
+    padding: 1em 3em;
+    border: 1px solid ;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    transition: background-color .3s;
+}
+
+.modal__close:hover{
+    color: #F26250;
+    background-color: #fff;
+}
+
+strong{
+    color: #FF585F;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
 
 </style>
 <div class="container">
@@ -199,7 +267,7 @@ h1{
     </a>
 
 
-<?php
+    <?php
 // Configuraciones de la base de datos
 $host = "localhost";
 $dbname = "Movilnet";
@@ -234,7 +302,6 @@ if ($stmt->rowCount() > 0) {
     echo "<th>detalles</th>";
     echo "</tr>";
 
-
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
@@ -246,17 +313,24 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
-        echo "<td><button class='ver-mas' >Ver mas..</button></td>";
+        echo "<td><button class='ver-mas' data-id='" . $row['id'] . "'>Ver mas..</button></td>";
         echo "</tr>";
     }
 
     echo "</table>";
 } else {
-    echo "<h1>" . "No se encontraron resultados" . "</h1>";
+    echo "<h1>No se encontraron resultados</h1>";
 }
 ?>
+<section class="modal" id="modal">
+    <div class="modal__container">
+        <h2 class="modal__title">Detalles del servidor</h2>
+        <p id="detalleDatos"></p>
+        <a href="javascript:void(0)" class="modal__close" onclick="cerrarModal()">CERRAR</a>
+    </div>
+</section>
+<script src="js/detalles.js"></script>
 </body>
-
 </html>
 
 <?php $contents = ob_get_clean(); ?>
