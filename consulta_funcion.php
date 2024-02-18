@@ -192,6 +192,14 @@ h1{
     background-color: #fff;
 }
 
+strong{
+    color: #FF585F;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
 </style>
 <div class="container">
     <form  action="consulta_funcion.php" method="POST">
@@ -315,15 +323,13 @@ if ($stmt->rowCount() > 0) {
     echo "<h1>No se encontraron resultados</h1>";
 }
 ?>
-
 <section class="modal" id="modal">
     <div class="modal__container">
         <h2 class="modal__title">Detalles del servidor</h2>
-        <p id="detalleDatos">DATOS</p>
+        <p id="detalleDatos"></p>
         <a href="javascript:void(0)" class="modal__close" onclick="cerrarModal()">CERRAR</a>
     </div>
 </section>
-
 <script src="js/detalles.js"></script>
 </body>
 </html>
