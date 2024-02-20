@@ -8,6 +8,7 @@
     <title>Consulta de servidores</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://kit.fontawesome.com/b408879b64.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -289,7 +290,7 @@ $stmt->bindParam(":buscar", $buscar); // Use prepared statements for security
 $stmt->execute();
 
 if ($stmt->rowCount() > 0) {
-    echo "<table>";
+    echo "<table class='tabla-servidores'>";
     echo "<tr>";
     echo "<th>ID</th>";
     echo "<th>Nombre</th>";
@@ -314,7 +315,7 @@ if ($stmt->rowCount() > 0) {
         echo "<td>" . $row['tipo_red'] . "</td>";
         echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['estatus'] . "</td>";
-        echo "<td><button class='ver-mas' data-id='" . $row['id'] . "'>Ver mas..</button></td>";
+        echo "<td><button class='ver-mas' data-id='" . $row['id'] . "' data-tabla=''>Ver mas..</button></td>";
         echo "</tr>";
     }
 
@@ -322,15 +323,17 @@ if ($stmt->rowCount() > 0) {
 } else {
     echo "<h1>No se encontraron resultados</h1>";
 }
+
 ?>
 <section class="modal" id="modal">
     <div class="modal__container">
         <h2 class="modal__title">Detalles del servidor</h2>
         <p id="detalleDatos"></p>
-        <a href="javascript:void(0)" class="modal__close" onclick="cerrarModal()">CERRAR</a>
+        <a href="javascript:void(0)" class="modal__close" onclick="modals[0].classList.remove('modal--show')">CERRAR</a>
     </div>
 </section>
-<script src="js/detalles.js"></script>
+<script defer src="js/detalles.js"></script>
+
 </body>
 </html>
 

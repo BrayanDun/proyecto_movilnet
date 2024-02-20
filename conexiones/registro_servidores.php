@@ -25,7 +25,7 @@ $tipo_red = isset($_POST["tipo_red"]) ? $_POST["tipo_red"] : "";
 $estatus = isset($_POST["estatus"]) ? $_POST["estatus"] : "";
 
 // Verificar si ambos campos están completos
-if (empty($id) || empty($nombre)|| empty($ip)|| empty($tipos)|| empty($ubicacion)|| empty($so)|| empty($servicios)|| empty($caracteristicas)|| empty($tipo_plataforma)|| empty($observaciones)|| empty($dependencias)|| empty($conexiones)|| empty($tipo_red)|| empty($estatus)) {
+if (empty($id) || empty($nombre)|| empty($ip)|| empty($tipos)|| empty($ubicacion)|| empty($so)|| empty($servicios)|| empty($caracteristicas)|| empty($tipo_plataforma)|| empty($observaciones)|| empty($tipo_red)|| empty($estatus)) {
     header("Location: error-registro.php?message=Por favor, completa los campos.");
     exit;
 }

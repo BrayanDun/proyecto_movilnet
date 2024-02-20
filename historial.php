@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <?php
 // Incluye la conexión a la base de datos y funciones necesarias
 require_once "conexiones/conexion.php";  // Asegúrate de cambiar esto según tu estructura de archivos
@@ -19,66 +20,76 @@ $historial = obtenerHistorial($db);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+     /* Estilos de la tabla con DataTables */
+
+        .display th {
+            background-color: #FF585F;
         }
 
-        h1 {
-            color: #333;
-        }
+     table {
+        position: relative;
+        left: 10%;
+        top: 30%;
+        transform: translate(-11.5%, -18%);
+        background-color: rgb(255 255 255);
+        margin-top: 85px;
+        width: 80%; /* Ajusta el ancho de la tabla según tu preferencia */
+        border-collapse: 35px;
+        border-radius: 12px; /* Agrega bordes redondeados */
+    }
 
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    th, td {
+        border: 1px solid #FF585F;
+        border-radius: 8px; /* Agrega bordes redondeados */
+        padding: 16px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #333; /* Color del texto */
+        font-family: Arial, sans-serif; /* Tipo de fuente */
+    }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    th {
+        background-color: #FF585F;
+        color: white;
+        font-weight: bold; /* Texto en negrita para encabezados */
+    }
 
-        th {
-            background-color: #f2f2f2;
-        }
-
+    /* Estilo para el texto en negrita */
+    strong {
+        color: #FF585F;
+        font-size: larger;
+        font-family: Arial, sans-serif;
+    }
+    H1{
+        display: flex;
+        justify-content: center;
+        color: #FF585F;
+        font-size: larger;
+        font-family: Arial, sans-serif;
+    }
     </style>
 </head>
 <body>
 
     <div>
-    <a href="javascript:history.back()" style="text-decoration: none;">
-        <button style="
-            margin: 20px;
-            margin-bottom: 83px;
-            padding: 20px;
-            padding-right: 25px;
-            text-align: center;
-            background-color: #FF585F;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            position: absolute;
-            margin-left: -500px;
-            border-color: white;
-            <i class="fas fa-arrow-left"></i> Atrás
-        </button>
-    </a>
+        <a href="javascript:history.back()" style="text-decoration: none; position: absolute; top: 10px; left: 10px;">
+            <button style="
+                padding: 10px;
+                background-color: #FF585F;
+                color: white;
+                border: none;
+                border-radius: 12px;
+                cursor: pointer;
+            ">
+                <i class="fas fa-arrow-left"></i> Atrás
+            </button>
+        </a>
     </div>
 
     <h1>Historial de Actividades</h1>
 
-    <table border="1">
+    <table id="historialTable" class="display" style="width:100%">
+  
         <thead>
             <tr>
                 <th>ID Administrador</th>
@@ -100,12 +111,16 @@ $historial = obtenerHistorial($db);
     </table>
 
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#historialTable').DataTable();
-        });
-    </script>
+<script>
+    $(document).ready(function() {
+        $('#historialTable').DataTable();
+    });
+</script>
+
 
 
 </body>
 </html>
+<?php $contents = ob_get_clean(); ?>
+
+<?php require("./index_administrador.php"); ?>
