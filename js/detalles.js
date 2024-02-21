@@ -60,6 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
         return '<strong>ID:</strong> ' + data.id + '<br>' +
             '<strong>Nombre:</strong> ' + data.nombre + '<br>' +
             '<strong>IP:</strong> ' + data.ip + '<br>' +
+            '<strong>Tipos:</strong> ' + data.tipos + '<br>' +
+            '<strong>Servicios:</strong> ' + data.servicios + '<br>' +
+            '<strong>Ubicacion:</strong> ' + data.ubicacion +' <br>' +
+            '<strong>Caracteristicas:</strong> ' + data.caracteristicas +' <br>' +
+            '<strong>Dependencias:</strong> ' + data.dependencias +' <br>' +
+            '<strong>Conexiones:</strong> ' + data.conexiones +' <br>' +
+            '<strong>Tipo Plataforma:</strong> ' + data.tipo_plataforma + '<br>' +
+            '<strong>Tipo Red:</strong> ' + data.tipo_red + '<br>' +
+            '<strong>Observaciones</strong> ' + data.observaciones + '<br>' +
             '<strong>Estatus:</strong> ' + data.estatus;
     }
 });

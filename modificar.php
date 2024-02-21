@@ -130,7 +130,6 @@ th {
 
 <body>
     <div class="container">
-        <label> MODIFICAR </label>
     </div>
     
     <a href="javascript:history.back()" style="text-decoration: none;">

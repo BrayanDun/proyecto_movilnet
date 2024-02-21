@@ -33,7 +33,7 @@
             ]);
 
             var options = {
-            title: 'Grafica de estatus',
+            title: 'Grafica de tipos',
             is3D: true,
             };
 
@@ -64,7 +64,7 @@
             cursor: pointer;
             position: absolute;
             margin-left: 60px;
-            border-color: white;
+            border-color: white;"
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>

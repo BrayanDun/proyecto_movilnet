@@ -104,7 +104,6 @@ h1 {
     
 <body>
     <div class="container">
-        <label> DESINCORPORAR SERVIDOR </label>
     </div>
 
     <table>
