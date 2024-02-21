@@ -1,6 +1,6 @@
 <?php
 // Incluye la conexión a la base de datos y funciones necesarias
-require_once "conexiones/conexion.php";
+require_once "conexion.php";
 
 $host = "localhost";
 $dbname = "Movilnet";
@@ -41,7 +41,8 @@ if ($p00 !== "" && $contraseña !== "") {
         $modulo = "Inicio de Sesión";
         registrarActividad($conn, $p00, $modulo);
 
-        header("Location: home.php");
+        header("Location: ../home.php");
+
         exit;
     }
 }
