@@ -270,6 +270,7 @@ strong{
 
 
 <?php
+
 // Configuraciones de la base de datos
 $host = "localhost";
 $dbname = "Movilnet";
