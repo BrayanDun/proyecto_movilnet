@@ -1,7 +1,7 @@
 <?php ob_start();?>
 <?php
 // Incluye la conexión a la base de datos y funciones necesarias
-require_once "conexiones/conexion.php";
+require_once "../conexiones/conexion.php";
 
 // Obtiene el historial
 $historial = obtenerHistorial($db);

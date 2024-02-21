@@ -18,6 +18,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Redirige al usuario a la página de inicio de sesión
-header("Location: iniciar_sesion.html");
+header("Location: ../iniciar_sesion.html");
 exit(); // Asegúrate de detener el script después de redirigir
 ?>

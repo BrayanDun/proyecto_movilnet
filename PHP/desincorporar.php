@@ -5,7 +5,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Consulta de servidores</title>
+    <title>Desincorporados</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://kit.fontawesome.com/b408879b64.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -88,9 +88,9 @@ th {
 }
 
 h1 {
-    position: absolute;
-    margin: 25px;
-    margin-LEFT: 25px;
+    margin-top: 43px;
+    position: center;
+    margin-LEFT: 399px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #FF585F;
 }
@@ -103,6 +103,7 @@ h1 {
 
     
 <body>
+<h1>Desincorporar</h1>
     <div class="container">
     </div>
 
@@ -155,7 +156,7 @@ h1 {
     <script>
     function desincorporarServidor(id) {
         // Realizar la solicitud al servidor para desincorporar el servidor
-        fetch(`desincorporar_servidor.php?id=${id}`)
+        fetch(`../conexiones/desincorporar_servidor.php?id=${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error de red: ${response.status}`);

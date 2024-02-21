@@ -26,7 +26,7 @@ $estatus = isset($_POST["estatus"]) ? $_POST["estatus"] : "";
 
 // Verificar si ambos campos están completos
 if (empty($id) || empty($nombre)|| empty($ip)|| empty($tipos)|| empty($ubicacion)|| empty($so)|| empty($servicios)|| empty($caracteristicas)|| empty($tipo_plataforma)|| empty($observaciones)|| empty($tipo_red)|| empty($estatus)) {
-    header("Location: error-registro.php?message=Por favor, completa los campos.");
+    header("Location: ../PHP/error-registro.php?message=Por favor, completa los campos.");
     exit;
 }
     // Obtener la ID del formulario
@@ -40,7 +40,7 @@ if (empty($id) || empty($nombre)|| empty($ip)|| empty($tipos)|| empty($ubicacion
 
     // Si la ID ya está registrada, redirigir a una página de error
     if ($stmt_check_id->rowCount() > 0) {
-        header("Location: error-registro.php?message=No se puede registrar un servidor con la misma ID. Por favor, elija una ID diferente.");
+        header("Location: ../PHP/error-registro.php?message=No se puede registrar un servidor con la misma ID. Por favor, elija una ID diferente.");
         exit; // Detener la ejecución del script
     }
 
@@ -96,6 +96,6 @@ if ($stmt->rowCount() == 0) {
 // Cerrar la conexión a PostgreSQL
 $conn = null;
 
-header("location: ../consulta_funcion.php");
+header("location: ../PHP/consulta_funcion.php");
 
 ?>

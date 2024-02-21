@@ -209,7 +209,7 @@ strong{
     </form>
     </div>
     <!-- Botón de exportación -->
-        <form action="exportar.php" method="POST" target="_blank">
+        <form action="../conexiones/exportar.php" method="POST" target="_blank">
             <input class="export" type="hidden" name="exportar" value="1">
             <input class="export" type="submit" value="Exportar a PDF">
         </form>
@@ -340,4 +340,4 @@ if ($stmt->rowCount() > 0) {
 
 <?php $contents = ob_get_clean(); ?>
 
-<?php require("./index_administrador.php"); ?>
+<?php require("index_administrador.php"); ?>

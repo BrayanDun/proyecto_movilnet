@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar servidor</title>
   <link href='https://fonts.googleapis.com/css?family=Open Sans:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="CSS\style_registro.css">
+  <link rel="stylesheet" href="../CSS/style_registro.css">
 </head>
 
 
@@ -22,7 +22,7 @@
         </ul>
       </div>
       <div class="form-signup">
-      <form action="conexiones\registro_servidores.php" method="post">
+      <form action="../conexiones/registro_servidores.php" method="post">
         <div class="row">
           <div class="col-6">
             <label for="id" class="text-left">ID del servidor</label>
@@ -171,16 +171,16 @@
         <input type="submit" value="Registrar servidor" class="btn-signup" id="submitBtn">
         <input type="button" value="Atrás" class="btn-atras" onclick="window.location.href='consulta_funcion.php'" 
         style="position: relative;
-    left: -105px;
-    top: -40px;
-    width: 102%;
-    max-width: 140px;
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    background-color: #e4d7d7;
-    color: #000;
-    cursor: pointer;">
+        left: -105px;
+        top: -40px;
+        width: 102%;
+        max-width: 140px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        background-color: #e4d7d7;
+        color: #000;
+        cursor: pointer;">
 
     </a>
         </div>

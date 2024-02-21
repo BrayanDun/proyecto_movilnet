@@ -5,7 +5,7 @@ session_start();
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION["p00"])) {
     // Redirige a la página de inicio de sesión
-    header("Location: iniciar_sesion.html");
+    header("Location: ../iniciar_sesion.html");
     exit(); // Asegúrate de detener el script después de redirigir
 }
 ?>
@@ -15,7 +15,7 @@ if (!isset($_SESSION["p00"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="CSS\style_inicio.css">
+    <link rel="stylesheet" href="../CSS/style_inicio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         .pagina-inicio {
@@ -39,7 +39,7 @@ if (!isset($_SESSION["p00"])) {
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="img\images.png" alt="logo">
+                    <img src="../img/images.png" alt="logo">
                 </span>
                 <div class="text header-text">
                     <span class="name"> Bienvenido</span>
@@ -56,21 +56,21 @@ if (!isset($_SESSION["p00"])) {
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="home-usuario.php">
-                        <img src="iconos\home-regular-24.png"/>
+                        <img src="../iconos/home-regular-24.png"/>
                         <span class="text nav-text">Inicio</span>
                         </a>
                     </li>
                     
                     <li class="nav-link">
                         <a href="consulta_para_usuarios.php">
-                        <img src="iconos\search-alt-2-regular-24.png"/>
+                        <img src="../iconos/search-alt-2-regular-24.png"/>
                         <span class="text nav-text">Consultar</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="cerrar_sesion.php">
-                        <img src="iconos\exit-regular-24.png"/>
+                        <a href="../conexiones/cerrar_sesion.php">
+                        <img src="../iconos/exit-regular-24.png"/>
                         <span class="text nav-text">Salir</span>
                         </a>
                     </li>
@@ -90,6 +90,6 @@ if (!isset($_SESSION["p00"])) {
         echo isset($contents) ?$contents:""; 
         ?>
     </section>
-    <script src="script_inicio.js"></script>
+    <script src="../js/script_inicio.js"></script>
 </body>
 </html>

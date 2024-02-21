@@ -207,7 +207,7 @@ strong{
     </form>
     </div>
     <!-- Botón de exportación -->
-        <form action="exportar.php" method="POST" target="_blank">
+        <form action="../conexiones/exportar.php" method="POST" target="_blank">
             <input class="export" type="hidden" name="exportar" value="1">
             <input class="export" type="submit" value="Exportar a PDF">
         </form>
@@ -329,7 +329,7 @@ if ($stmt->rowCount() > 0) {
         <a href="javascript:void(0)" class="modal__close" onclick="cerrarModal()">CERRAR</a>
     </div>
 </section>
-<script src="js/detalles.js"></script>
+<script src="../js/detalles.js"></script>
 </body>
 </html>
 

@@ -173,7 +173,7 @@ h1 {
     <script>
     function restaurarServidor(id) {
         // Realizar la solicitud al servidor para desincorporar el servidor
-        fetch(`Restaurar.php?id=${id}`)
+        fetch(`../conexiones/Restaurar.php?id=${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error de red: ${response.status}`);
@@ -194,7 +194,7 @@ h1 {
 <script>
     function eliminarServidor(id) {
         // Realizar la solicitud al servidor para desincorporar el servidor
-        fetch(`eliminar.php?id=${id}`)
+        fetch(`../conexiones/eliminar.php?id=${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error de red: ${response.status}`);

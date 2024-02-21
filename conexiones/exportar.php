@@ -18,7 +18,7 @@ if (isset($_POST['exportar'])) {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // Crear un nuevo objeto TCPDF
-        require_once('TCPDF/tcpdf.php');
+        require_once('../TCPDF/tcpdf.php');
         $pdf = new TCPDF();
 
         // Agregar una nueva página al PDF
@@ -28,7 +28,7 @@ if (isset($_POST['exportar'])) {
         $pdf->SetFont('times', '', 12);
 
         // Agregar una imagen en la esquina superior derecha del PDF
-        $imagePath = 'img/Movilnet.jpg';
+        $imagePath = '../img/Movilnet.jpg';
         $pdf->Image($imagePath, 170, 10, 30);
 
         // Crear la tabla en el PDF con diseño redondeado y colorido
@@ -73,7 +73,7 @@ if (isset($_POST['exportar'])) {
         $pdf->writeHTML($html, true, false, true, false, '');
 
         // Nombre del archivo PDF
-        $filename = 'exportacion_servidores.pdf';
+        $filename = 'Servidores.pdf';
 
         // Salida del PDF (descarga o visualización según el navegador)
         $pdf->Output($filename, 'D');

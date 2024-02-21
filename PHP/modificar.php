@@ -126,9 +126,19 @@ th {
     background-color: #FF585F;
     color: white;
 }
+
+h1 {
+    margin-top: 43px;
+    position: center;
+    margin-LEFT: 399px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #FF585F;
+}
 </style>
 
 <body>
+
+<h1>Modificar</h1>
     <div class="container">
     </div>
     
@@ -149,6 +159,7 @@ th {
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
+    
     <table>
         <thead>
             <tr>
@@ -310,7 +321,7 @@ th {
             };
 
             // Configurar la solicitud AJAX
-            xmlhttp.open("POST", "guardar_edicion.php", true);
+            xmlhttp.open("POST", "../conexiones/guardar_edicion.php", true);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
             // Convertir el objeto de datos a formato JSON y enviarlo

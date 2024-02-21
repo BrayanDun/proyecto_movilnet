@@ -19,7 +19,7 @@ if (!isset($_SESSION["p00"])) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         .pagina-inicio {
-            background-image: url('img/zyro-image.png');
+            background-image: url('../img/zyro-image.png');
             background-repeat: no-repeat;
             background-position: 50px;
             background-size: 1550px;
@@ -96,7 +96,7 @@ if (!isset($_SESSION["p00"])) {
                     </li>
 
                     <li class="nav-link">
-                        <a href="cerrar_sesion_administrador.php">
+                        <a href="../conexiones/cerrar_sesion_administrador.php">
                         <img src="../iconos/exit-regular-24.png"/>
                         <span class="text nav-text">Salir</span>
                         </a>

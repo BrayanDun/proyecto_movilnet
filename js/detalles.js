@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function cargarDetallesServidor(servidorId, modalIndex) {
-        fetch('detalles_servidor.php?id=' + servidorId)
+        fetch('../conexiones/detalles_servidor.php?id=' + servidorId)
             .then(response => response.json())
             .then(data => {
                 detalleDatos.innerHTML = formatDetalles(data);
