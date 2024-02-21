@@ -5,7 +5,7 @@ session_start();
 // Verifica si el usuario ha iniciado sesión
 if (!isset($_SESSION["p00"])) {
     // Redirige a la página de inicio de sesión
-    header("Location: iniciar_sesion_administrador.html");
+    header("Location: ../iniciar_sesion_administrador.html");
     exit(); // Asegúrate de detener el script después de redirigir
 }
 ?>
