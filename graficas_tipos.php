@@ -54,17 +54,16 @@
     <div>
     <a href="javascript:history.back()" style="text-decoration: none;">
         <button style="
-            padding: 20px;
-            padding-right: 20px;
-            text-align: center;
+            margin: 0px;
+            margin-bottom: -176px;
+            padding: 10px;
             background-color: #FF585F;
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             position: absolute;
-            margin-left: 60px;
-            border-color: white;
+            border-color: white;">
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
