@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             '<strong>Tipo Plataforma:</strong> ' + data.tipo_plataforma + '<br>' +
             '<strong>Tipo Red:</strong> ' + data.tipo_red + '<br>' +
             '<strong>Observaciones</strong> ' + data.observaciones + '<br>' +
+            '<strong>Fecha-Modificado</strong> ' + data.modificado_en + '<br>' +
             '<strong>Estatus:</strong> ' + data.estatus;
     }
 });
