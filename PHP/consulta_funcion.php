@@ -333,7 +333,7 @@ if ($stmt->rowCount() > 0) {
         <a href="javascript:void(0)" class="modal__close" onclick="modals[0].classList.remove('modal--show')">CERRAR</a>
     </div>
 </section>
-<script defer src="js/detalles.js"></script>
+<script defer src="../js/detalles.js"></script>
 
 </body>
 </html>

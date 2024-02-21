@@ -16,7 +16,7 @@ $contraseña = isset($_POST["contraseña"]) ? $_POST["contraseña"] : "";
 
 // Verificar si ambos campos están completos
 if (empty($p00) || empty($contraseña)) {
-    header("Location: error-login.php?message=Por favor, completa ambos campos.");
+    header("Location: ../PHP/error-login.php?message=Por favor, completa ambos campos.");
     exit;
 }
 
@@ -41,7 +41,7 @@ if ($p00 !== "" && $contraseña !== "") {
         $modulo = "Inicio de Sesión";
         registrarActividad($conn, $p00, $modulo);
 
-        header("Location: ../home.php");
+        header("Location: ../PHP/home.php");
 
         exit;
     }
@@ -49,7 +49,7 @@ if ($p00 !== "" && $contraseña !== "") {
 
 // El usuario no existe o los campos estaban vacíos
 // Redirige a la página de error
-header("Location: error-login.php");
+header("Location: ../PHP/error-login.php");
 exit;
 
 // Cierra la conexión
