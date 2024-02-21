@@ -1,4 +1,7 @@
 <?php
+// Incluye la conexión a la base de datos y funciones necesarias
+require_once "conexiones/conexion.php";
+
 $host = "localhost";
 $dbname = "Movilnet";
 $username = "postgres";
@@ -33,6 +36,11 @@ if ($p00 !== "" && $contraseña !== "") {
         // Inicia sesión
         session_start();
         $_SESSION["p00"] = $p00;
+
+        // Registra la actividad
+        $modulo = "Inicio de Sesión";
+        registrarActividad($conn, $p00, $modulo);
+
         header("Location: home.php");
         exit;
     }

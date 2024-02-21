@@ -1,16 +1,11 @@
 <?php ob_start();?>
 <?php
 // Incluye la conexión a la base de datos y funciones necesarias
-require_once "conexiones/conexion.php";  // Asegúrate de cambiar esto según tu estructura de archivos
-
-// Función para obtener el historial
-function obtenerHistorial($db) {
-    $stmt = $db->query("SELECT * FROM historial");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+require_once "conexiones/conexion.php";
 
 // Obtiene el historial
 $historial = obtenerHistorial($db);
+
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +88,6 @@ $historial = obtenerHistorial($db);
         <thead>
             <tr>
                 <th>ID Administrador</th>
-                <th>Acción</th>
                 <th>Módulo</th>
                 <th>Fecha y Hora</th>
             </tr>
@@ -102,12 +96,12 @@ $historial = obtenerHistorial($db);
             <?php foreach ($historial as $actividad): ?>
                 <tr>
                     <td><?= htmlspecialchars($actividad['id_administrador']); ?></td>
-                    <td><?= htmlspecialchars($actividad['accion']); ?></td>
                     <td><?= htmlspecialchars($actividad['modulo']); ?></td>
                     <td><?= isset($actividad['fecha_hora']) ? $actividad['fecha_hora'] : 'No disponible'; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
+    </table>
     </table>
 
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
@@ -116,8 +110,6 @@ $historial = obtenerHistorial($db);
         $('#historialTable').DataTable();
     });
 </script>
-
-
 
 </body>
 </html>
