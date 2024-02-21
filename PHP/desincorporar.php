@@ -103,7 +103,6 @@ h1 {
 
     
 <body>
-<h1>Desincorporar</h1>
     <div class="container">
     </div>
 
