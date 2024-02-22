@@ -35,7 +35,15 @@ if (isset($_POST['exportar'])) {
         $html = '<h2 style="text-align:center; color: #FF585F;">Tabla de Servidores</h2>';
 
         // Ajustar el tamaño de la tabla y la posición de la imagen
-        $html .= '<table border="1" style="width: 80%; border-collapse: collapse; text-align: center; border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">';
+        $html .= '<table border="0,5" 
+            style="
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            border-radius: 12px; 
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">';
         $html .= '<tr style="background-color: #FF585F; color: white; border-bottom: 2px solid #FF585F;">';
         $html .= '<th>ID</th>';
         $html .= '<th>Nombre</th>';

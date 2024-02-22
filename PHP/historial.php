@@ -22,12 +22,13 @@ $historial = obtenerHistorial($db);
         <a href="javascript:history.back()" style="text-decoration: none; position: absolute; top: 10px; left: 10px;">
             <button style="
                 padding: 10px;
+                margin-top: 70px;
                 background-color: #FF585F;
                 color: white;
                 border: none;
                 border-radius: 12px;
                 cursor: pointer;
-                margin-left: 100px;
+                margin-left: 15px;
             ">
                 <i class="fas fa-arrow-left"></i> Atrás
             </button>

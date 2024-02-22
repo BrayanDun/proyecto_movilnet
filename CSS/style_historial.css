@@ -12,7 +12,7 @@ body {
  table {
     position: relative;
     left: 10%;
-    transform: translate(-11.5%, -18%);
+    transform: translate(-11.5%, -8%);
     background-color: rgb(255 255 255);
     margin-top: 85px;
     width: 80%; /* Ajusta el ancho de la tabla según tu preferencia */
@@ -48,5 +48,5 @@ h2{
     color: #FF585F;
     font-size: xx-large;
     font-family: Arial, sans-serif;
-    margin-top: 15px;
+    margin-top: 62px;
 }
