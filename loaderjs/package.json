@@ -1,0 +1,33 @@
+{
+  "name": "loaderjs",
+  "version": "1.0.0",
+  "description": "A flexible promise-based resource loader for web application.",
+  "homepage": "https://github.com/rhaldkhein/LoaderJS",
+  "repository": "rhaldkhein/LoaderJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "javascript",
+    "resource",
+    "loader",
+    "web",
+    "application"
+  ],
+  "author": "Kevin <undyingmind@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "files": [
+    "index.js",
+    "loaderjs.js",
+    "loaderjs.bundle.js",
+    "loaderjs.bundle.min.js"
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "webpack-stream": "^4.0.0"
+  }
+}

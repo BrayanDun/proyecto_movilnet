@@ -54,14 +54,14 @@ label {
 .boton_busq {
     background-color: #FF585F;
     width: 52px;
-    padding: 10px;
+    padding: 14px;
     position: absolute;
     margin-top: 26px;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     border-color: whitesmoke;
-    background-image: url(iconos/search-regular-24.png);
+    background-image: url("../iconos/search-regular-24.png");
     background-repeat: no-repeat;
     background-position: 12px 10px;
 }
@@ -74,7 +74,7 @@ button:hover {
 table {
     position: relative;
     left: 10%;
-    top: 0%;
+    top: 10%;
     transform: translate(-11.5%, -18%);
     background-color: rgb(255 255 255);
     margin-top: 85px;

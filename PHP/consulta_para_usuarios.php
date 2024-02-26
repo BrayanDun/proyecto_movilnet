@@ -38,45 +38,6 @@
             <i class="fas fa-arrow-left"></i> Atrás
         </button>
     </a>
-    
-    <a href="graficas_tipos_usuarios.php" style="text-decoration: none;">
-        <button style="
-           position: relative;
-            left: 76%;
-            top: 8px;
-            transform: translate(-48%, -45%);
-            margin: 10px;
-            padding: 10px;
-            background-color: #0072ff;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            border-color: white;
-            cursor: pointer;
-           ">
-            <i class="#"></i> Graficas Tipos
-        </button>
-    </a>
-    
-    <a href="graficas_estatus_usuarios.php" style="text-decoration: none;">
-        <button style="
-           position: relative;
-            left: 52%;
-            top: 8px;
-            transform: translate(-65%, -45%);
-            margin: 10px;
-            padding: 10px;
-            background-color: #0072ff;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            border-color: white;
-            cursor: pointer;
-           ">
-            <i class="#"></i> Graficas Estatus
-        </button>
-    </a>
-
 
     <?php
 // Configuraciones de la base de datos

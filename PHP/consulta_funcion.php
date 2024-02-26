@@ -41,44 +41,6 @@
         </button>
     </a>
     
-    <a href="graficas_tipos.php" style="text-decoration: none;">
-        <button style="
-           position: relative;
-            left: 55%;
-            top: 8px;
-            transform: translate(-48%, -45%);
-            margin: 10px;
-            padding: 10px;
-            background-color: #0072ff;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            border-color: white;
-            cursor: pointer;
-           ">
-            <i class="#"></i> Graficas Tipos
-        </button>
-    </a>
-    
-    <a href="graficas_estatus.php" style="text-decoration: none;">
-        <button style="
-           position: relative;
-            left: 60%;
-            top: 8px;
-            transform: translate(-65%, -45%);
-            margin: 10px;
-            padding: 10px;
-            background-color: #0072ff;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            border-color: white;
-            cursor: pointer;
-           ">
-            <i class="#"></i> Graficas Estatus
-        </button>
-    </a>
-
 
 <?php
 
