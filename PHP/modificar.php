@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/b408879b64.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/style_modificar.css">
+    <link rel="icon" href="../img/image.png" type="image/png">
 </head>
 
 <body>

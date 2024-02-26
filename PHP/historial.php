@@ -15,6 +15,7 @@ $historial = obtenerHistorial($db);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style_historial.css">
     <title>Historial</title>
+    <link rel="icon" href="../img/image.png" type="image/png">
 </head>
 <body>
 

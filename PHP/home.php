@@ -17,6 +17,7 @@ if (!isset($_SESSION["p00"])) {
     <title>Inicio</title>
     <link rel="stylesheet" href="../CSS/style_inicio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../img/image.png" type="image/png">
     <style>
         .pagina-inicio {
             background-image: url('../img/zyro-image.png');

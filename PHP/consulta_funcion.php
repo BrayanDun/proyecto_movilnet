@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/style_consulta.css">
+    <link rel="icon" href="../img/image.png" type="image/png">
 </head>
 <body>
 <div class="container">
